@@ -1,0 +1,62 @@
+## 요구사항 간략화
+1. 날짜 정보를 받는다.
+2. 주문 메뉴와 수량 정보를 받는다.
+3. 날짜 정보와 주문 메뉴를 통해 이벤트 내용을 확인한다.
+
+# Class Diagram
+![img_1.png](ClassDiagram.png)
+
+# Model
+### Date 관련
+- [ ] 날짜 정보 저장 - Date
+- [ ] 크리스마스 디데이 확인하기 - Date
+- [ ] 특별 할인 날인지 확인하기 - Date
+- [ ] 평일인지 확인하기 - Date
+- [ ] 주말인지 확인하기 - Date
+- [ ] 특별 할인 날짜 저장 - SpecialDate (Enum)
+
+### Menu 관련
+- [ ] 각종 메뉴의 이름, 가격, 카테고리 보관 - MenuList (Enum) 
+- [ ] 작성한 메뉴들로 객체를 만들어 반환하기 - MenuList
+- [ ] 메뉴 정보 저장 - Menu
+- [ ] 이름이 일치하는지 확인하기 - Menu
+- [ ] 특정 카테고리 메뉴인지 확인하기 - Menu
+- [ ] 메뉴들을 불변객체로 저장하기 - MenuInformationStorage
+- [ ] 주문 메뉴 입력값 저장 - RequestOrders
+- [ ] 주문 메뉴와 수량 저장 - OrderedMenu
+- [ ] 주문 총 가격 저장 - Price
+- [ ] 주문 메뉴들 저장 - OrderedMenus
+
+### Event 관련
+- [ ] 각종 이벤트 정보 저장 - EventInformationStorage
+- [ ] 배지 정보 저장 - Badge
+- [ ] 할인 금액을 통해 배지 등급 결정하기 - Badge
+- [ ] 증정 선물 정보 저장 - Gift
+- [ ] 총 할인 금액을 통해 증정선물 결정하기 - Gift
+- [ ] 총 할인 금액 저장 - Discount
+- [ ] 총 할인 금액 계산하기 - Discount
+  - [ ] 크리스맛 디데이 할인
+  - [ ] 특별 할인
+  - [ ] 평일 or 주말 할인
+- [ ] 총 혜택 금액 저장하기 - EventResults
+- [ ] 혜택 정보 저장소에 저장하기 - EventResults
+
+### Util
+- [ ] 주문 메뉴 출력을 위해 데이터를 Dto 로 변환하기 - Converter
+- [ ] 혜택 결과 출력을 위해 데이터를 Dto 로 변환하기 - Converter
+- [ ] 날짜 입력값을 날짜 정보 데이터 Dto 로 변환하기 - Converter
+- [ ] 주문 입력값을 주문 정보 데이터 Dto 로 변환하기 - Converter
+ 
+### Service
+- [ ] 주문 정보 Dto 를 통해 주문 정보 객체 생성하기 - OrderService
+- [ ] 주문 정보와 메뉴리스트를 사용해 주문 메뉴 객체 생성하기 - OrderService
+- [ ] 날짜와 주문 메뉴, 이벤트 정보를 통해 결과 생성하기 - EventService
+- [ ] 날짜 정보 Dto 를 통해 날짜 정보 객체 생성하기 - EventService
+
+# Controller
+- [ ] 날짜 정보를 converter 통해 Dto 로 받기 - ChristmasEventController
+- [ ] 주문 정보를 converter 통해 Dto 로 받기 - ChristmasEventController
+- [ ] 주문 메뉴 Dto 를 View 에 전달하기 - ChristmasEventController
+- [ ] 혜택 결과 Dto 를 View 에 전달하기 - ChristmasEventController
+
+
