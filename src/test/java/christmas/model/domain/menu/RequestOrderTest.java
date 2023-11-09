@@ -1,5 +1,6 @@
 package christmas.model.domain.menu;
 
+import christmas.model.domain.order.RequestOrder;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

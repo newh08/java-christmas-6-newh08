@@ -1,4 +1,6 @@
-package christmas.model.domain.menu;
+package christmas.model.domain.order;
+
+import christmas.model.domain.menu.Menu;
 
 public class RequestOrder {
     private final Menu menu;
