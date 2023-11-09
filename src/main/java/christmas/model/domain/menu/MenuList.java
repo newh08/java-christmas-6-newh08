@@ -5,6 +5,8 @@ import static christmas.model.domain.menu.MenuCategory.MAIN;
 import static christmas.model.domain.menu.MenuCategory.APPETIZER;
 import static christmas.model.domain.menu.MenuCategory.BEVERAGE;
 
+import java.util.Objects;
+
 public enum MenuList {
     MUSHROOM_SOUP("양송이수프", 6000, APPETIZER),
     TAPAS("타파스", 5500, APPETIZER),
@@ -27,5 +29,9 @@ public enum MenuList {
         this.name = name;
         this.price = price;
         this.category = category;
+    }
+
+    public boolean checkName(String name) {
+        return Objects.equals(this.name, name);
     }
 }
