@@ -8,7 +8,7 @@ import static christmas.model.domain.menu.MenuCategory.BEVERAGE;
 import java.util.Arrays;
 import java.util.Objects;
 
-public enum MenuList {
+public enum Menu {
     MUSHROOM_SOUP("양송이수프", 6000, APPETIZER),
     TAPAS("타파스", 5500, APPETIZER),
     CAESAR_SALAD("시저샐러드", 8000, APPETIZER),
@@ -26,13 +26,13 @@ public enum MenuList {
     private final int price;
     private final MenuCategory category;
 
-    MenuList(String name, int price, MenuCategory category) {
+    Menu(String name, int price, MenuCategory category) {
         this.name = name;
         this.price = price;
         this.category = category;
     }
 
-    public static MenuList getMenuByName(String menuName) {
+    public static Menu getMenuByName(String menuName) {
         return Arrays.stream(values())
                 .filter(menu -> menu.checkName(menuName))
                 .findAny()
