@@ -25,7 +25,9 @@
 
 ### Order 관련
 - [x] 주문 메뉴 입력값 저장 - RequestOrder
+- [x] 주문 메뉴에 대한 가격 계산해 반환 - RequestOrder
 - [ ] 주문 총 가격 저장 - Price
+- [ ] 주문을 통해 총 가격 업데이트 - Price
 - [ ] 주문 메뉴들 저장 - RequestOrders
 
 ### Event 관련

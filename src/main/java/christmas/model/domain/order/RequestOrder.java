@@ -10,4 +10,8 @@ public class RequestOrder {
         this.menu = Menu.getMenuByName(menuName);
         this.quantity = quantity;
     }
+
+    public int getOrderPrice() {
+        return menu.getPrice() * quantity;
+    }
 }

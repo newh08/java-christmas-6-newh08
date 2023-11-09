@@ -46,4 +46,8 @@ public enum Menu {
     public boolean checkCategory(MenuCategory category) {
         return this.category.checkCategory(category);
     }
+
+    public int getPrice() {
+        return price;
+    }
 }
