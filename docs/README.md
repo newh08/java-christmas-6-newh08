@@ -30,7 +30,7 @@
 - [x] 주문 총 가격 저장 - Price
 - [x] 주문을 통해 총 가격 업데이트 - Price
 - [x] 주문 메뉴들 저장 - RequestOrders
-- [ ] 카테고리별 주문 수량 반환 - RequestOrders
+- [x] 카테고리별 주문 수량 반환 - RequestOrders
 
 ### Event 관련
 - [ ] 배지 정보 저장 - Badge
