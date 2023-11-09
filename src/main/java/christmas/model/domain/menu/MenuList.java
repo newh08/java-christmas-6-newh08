@@ -46,4 +46,10 @@ public enum MenuList {
                 .map(Menu::new)
                 .toList();
     }
+
+    public static boolean containName(String checkingName) {
+        return Arrays.stream(values())
+                .map(menu -> menu.name)
+                .anyMatch(n -> n.equals(checkingName));
+    }
 }

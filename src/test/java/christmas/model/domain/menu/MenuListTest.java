@@ -17,4 +17,11 @@ class MenuListTest {
         assertThatThrownBy(() -> menus.add(new Menu(MenuList.CHAMPAGNE)))
                 .isInstanceOf(UnsupportedOperationException.class);
     }
+
+    @DisplayName("MenuList 에 없는 메뉴 이름을 확인하면 False 를, 있는 이름을 확인하면 True 를 반환한다.")
+    @Test
+    void menuListTest_2() {
+        assertThat(MenuList.containName("스테이크")).isFalse();
+        assertThat(MenuList.containName("티본스테이크")).isTrue();
+    }
 }
