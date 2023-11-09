@@ -10,4 +10,8 @@ public class Menu {
     public boolean checkMenuNae(String name) {
         return menu.checkName(name);
     }
+
+    public boolean checkCategory(MenuCategory category) {
+        return menu.checkCategory(category);
+    }
 }

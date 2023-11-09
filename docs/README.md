@@ -24,7 +24,7 @@
 - [x] 특정 카테고리인지 확인 - MenuCategory (Enum)
 - [x] 메뉴 정보 저장 - Menu
 - [x] 이름이 일치하는지 확인하기 - Menu
-- [ ] 특정 카테고리 메뉴인지 확인하기 - Menu
+- [x] 특정 카테고리 메뉴인지 확인하기 - Menu
 - [ ] 메뉴들을 불변객체로 저장하기 - MenuInformationStorage
 - [ ] 주문 메뉴 입력값 저장 - RequestOrders
 - [ ] 주문 메뉴와 수량 저장 - OrderedMenu
