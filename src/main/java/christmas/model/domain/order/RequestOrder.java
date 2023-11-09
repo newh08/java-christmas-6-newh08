@@ -1,6 +1,7 @@
 package christmas.model.domain.order;
 
 import christmas.model.domain.menu.Menu;
+import christmas.model.domain.menu.MenuCategory;
 
 public class RequestOrder {
     private final Menu menu;
@@ -11,7 +12,15 @@ public class RequestOrder {
         this.quantity = quantity;
     }
 
+    public boolean checkCatalog(MenuCategory menuCategory) {
+        return menu.checkCategory(menuCategory);
+    }
+
     public int getOrderPrice() {
         return menu.getPrice() * quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }

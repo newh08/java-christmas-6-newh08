@@ -26,9 +26,11 @@
 ### Order 관련
 - [x] 주문 메뉴 입력값 저장 - RequestOrder
 - [x] 주문 메뉴에 대한 가격 계산해 반환 - RequestOrder
+- [x] 주문이 특정 카테고리인지 반환 - RequestOrder
 - [x] 주문 총 가격 저장 - Price
 - [x] 주문을 통해 총 가격 업데이트 - Price
 - [x] 주문 메뉴들 저장 - RequestOrders
+- [ ] 카테고리별 주문 수량 반환 - RequestOrders
 
 ### Event 관련
 - [ ] 배지 정보 저장 - Badge
@@ -36,11 +38,11 @@
 - [x] 증정 선물 정보 저장 - Gift
 - [x] 총 주문 금액을 통해 증정선물 결정하기 - Gift
 - [x] 선물 금액 반환하기 - Gift
-- [ ] 할인 금액 계산하기 - Discount (Interface)
-  - [ ] 크리스마스 디데이 할인 - ChristmasDiscount
-  - [ ] 평일 할인 - WeekDiscount
-  - [ ] 주말 할인 - WeekendDiscount
-  - [ ] 특별 할인 - SpecialDiscount
+- [x] 할인 금액 계산하기 - Discount (Interface)
+  - [x] 크리스마스 디데이 할인 - ChristmasDiscount
+  - [x] 평일 할인 - WeekDiscount
+  - [x] 주말 할인 - WeekendDiscount
+  - [x] 특별 할인 - SpecialDiscount
 - [x] 총 할인 금액 저장 - TotalDiscount
 - [ ] 총 혜택 금액 저장하기 - EventResults
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
