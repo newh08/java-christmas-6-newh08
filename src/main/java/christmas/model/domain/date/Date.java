@@ -14,4 +14,8 @@ public class Date {
     boolean isSameDate(int date) {
         return this.date == date;
     }
+
+    public boolean isWeekEnd() {
+        return date % 7 == 1 || date % 7 == 2;
+    }
 }
