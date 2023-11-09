@@ -14,6 +14,7 @@
 - [ ] 평일인지 확인하기 - Date
 - [ ] 주말인지 확인하기 - Date
 - [x] 특별 할인 날짜 저장 - SpecialDate (Enum)
+- [x] 특별 할인 날인지 확인하기 - SpecialDate (Enum)
 
 ### Menu 관련
 - [x] 각종 메뉴의 이름, 가격, 카테고리 보관 - Menu (Enum)
