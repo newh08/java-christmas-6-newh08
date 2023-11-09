@@ -38,10 +38,10 @@
 - [x] 선물 금액 반환하기 - Gift
 - [ ] 할인 금액 계산하기 - Discount (Interface)
   - [ ] 크리스마스 디데이 할인 - ChristmasDiscount
-  - [ ] 특별 할인 - SpecialDiscount
   - [ ] 평일 할인 - WeekDiscount
   - [ ] 주말 할인 - WeekendDiscount
-- [ ] 총 할인 금액 저장 - TotalDiscount
+  - [ ] 특별 할인 - SpecialDiscount
+- [x] 총 할인 금액 저장 - TotalDiscount
 - [ ] 총 혜택 금액 저장하기 - EventResults
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
 
