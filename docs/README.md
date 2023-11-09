@@ -31,16 +31,17 @@
 - [x] 주문 메뉴들 저장 - RequestOrders
 
 ### Event 관련
-- [ ] 각종 이벤트 정보 저장 - EventInformationStorage
 - [ ] 배지 정보 저장 - Badge
 - [ ] 할인 금액을 통해 배지 등급 결정하기 - Badge
-- [ ] 증정 선물 정보 저장 - Gift
-- [ ] 총 할인 금액을 통해 증정선물 결정하기 - Gift
-- [ ] 총 할인 금액 저장 - Discount
-- [ ] 총 할인 금액 계산하기 - Discount
-  - [ ] 크리스맛 디데이 할인
-  - [ ] 특별 할인
-  - [ ] 평일 or 주말 할인
+- [x] 증정 선물 정보 저장 - Gift
+- [x] 총 주문 금액을 통해 증정선물 결정하기 - Gift
+- [x] 선물 금액 반환하기 - Gift
+- [ ] 할인 금액 계산하기 - Discount (Interface)
+  - [ ] 크리스마스 디데이 할인 - ChristmasDiscount
+  - [ ] 특별 할인 - SpecialDiscount
+  - [ ] 평일 할인 - WeekDiscount
+  - [ ] 주말 할인 - WeekendDiscount
+- [ ] 총 할인 금액 저장 - TotalDiscount
 - [ ] 총 혜택 금액 저장하기 - EventResults
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
 
