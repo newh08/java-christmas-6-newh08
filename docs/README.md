@@ -18,6 +18,7 @@
 ### Menu 관련
 - [x] 각종 메뉴의 이름, 가격, 카테고리 보관 - MenuList (Enum)
 - [x] 특정 이름인지 확인 - MenuList (Enum)
+- [x] 특정 카테고리인지 확인 - MenuList (Enum)
 - [ ] 작성한 메뉴들로 객체를 만들어 반환하기 - MenuList (Enum)
 - [x] 메뉴의 카테고리 보관 - MenuCategory (Enum)
 - [x] 특정 카테고리인지 확인 - MenuCategory (Enum)

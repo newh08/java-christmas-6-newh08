@@ -34,4 +34,8 @@ public enum MenuList {
     public boolean checkName(String name) {
         return Objects.equals(this.name, name);
     }
+
+    public boolean checkCategory(MenuCategory category) {
+        return this.category.checkCategory(category);
+    }
 }
