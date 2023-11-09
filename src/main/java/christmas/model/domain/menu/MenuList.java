@@ -5,6 +5,8 @@ import static christmas.model.domain.menu.MenuCategory.MAIN;
 import static christmas.model.domain.menu.MenuCategory.APPETIZER;
 import static christmas.model.domain.menu.MenuCategory.BEVERAGE;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public enum MenuList {
@@ -37,5 +39,11 @@ public enum MenuList {
 
     public boolean checkCategory(MenuCategory category) {
         return this.category.checkCategory(category);
+    }
+
+    public static List<Menu> makeUnmodifiableMenus() {
+        return Arrays.stream(values())
+                .map(Menu::new)
+                .toList();
     }
 }
