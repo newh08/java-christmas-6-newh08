@@ -1,6 +1,10 @@
 package christmas.model.domain.date;
 
 public class Date {
+    private static final int CHRISTMAS_DATE = 25;
+    private static final int WEEK = 7;
+    private static final int FIRST_FRIDAY = 1;
+    private static final int FIRST_SATURDAY = 2;
     private final int date;
 
     public Date(int date) {
@@ -16,6 +20,17 @@ public class Date {
     }
 
     public boolean isWeekEnd() {
-        return date % 7 == 1 || date % 7 == 2;
+        return date % WEEK == FIRST_FRIDAY || date % WEEK == FIRST_SATURDAY;
+    }
+
+    public int getDDayFromChristmas() {
+        if (isAfterChristmas()) {
+            return -1;
+        }
+        return CHRISTMAS_DATE - date;
+    }
+
+    private boolean isAfterChristmas() {
+        return date > CHRISTMAS_DATE;
     }
 }

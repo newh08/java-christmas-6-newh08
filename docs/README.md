@@ -9,7 +9,7 @@
 # Model
 ### Date 관련
 - [x] 날짜 정보 저장 - Date
-- [ ] 크리스마스 디데이 확인하기 - Date
+- [x] 크리스마스 디데이 확인하기 - Date
 - [x] 특별 할인 날인지 확인하기 - Date
 - [x] 주말인지 확인하기 - Date
 - [x] 특별 할인 날짜 저장 - SpecialDate (Enum)

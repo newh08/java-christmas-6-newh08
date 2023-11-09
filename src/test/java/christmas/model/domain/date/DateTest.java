@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class DateTest {
 
+    @DisplayName("specialDate 로 Date 를 생성후 확인하면 True 를, 아닌경우는 False 를 반환한다.")
     @Test
     void dateTest_1() {
         Date specialDate = new Date(3);
@@ -22,5 +23,14 @@ class DateTest {
         Date day = new Date(4);
         assertThat(weekend.isWeekEnd()).isTrue();
         assertThat(day.isWeekEnd()).isFalse();
+    }
+
+    @DisplayName("크리스마스가 지난 후 디데이를 확인하면 -1 을 반환한다.")
+    @Test
+    void dateTest_3() {
+        Date afterChristmas_1 = new Date(26);
+        Date afterChristmas_2 = new Date(27);
+        assertThat(afterChristmas_1.getDDayFromChristmas()).isEqualTo(-1);
+        assertThat(afterChristmas_2.getDDayFromChristmas()).isEqualTo(-1);
     }
 }
