@@ -4,7 +4,7 @@
 3. 날짜 정보와 주문 메뉴를 통해 이벤트 내용을 확인한다.
 
 # Class Diagram
-![img_1.png](ClassDiagram.png)
+![img.png](ClassDiagram.png)
 
 # Model
 ### Date 관련
@@ -19,20 +19,14 @@
 - [x] 각종 메뉴의 이름, 가격, 카테고리 보관 - MenuList (Enum)
 - [x] 특정 이름인지 확인 - MenuList (Enum)
 - [x] 특정 카테고리인지 확인 - MenuList (Enum)
-- [x] 작성한 메뉴들로 객체들을 만들어 반환하기 - MenuList (Enum)
-- [x] 특정 이름이 메뉴에 있는 이름은지 확인 - MenuList (Enum) 
+- [ ] 특정 이름을 받아 동일한 이름의 메뉴 반환하기 - MenuList (Enum)
 - [x] 메뉴의 카테고리 보관 - MenuCategory (Enum)
 - [x] 특정 카테고리인지 확인 - MenuCategory (Enum)
-- [x] 메뉴 정보 저장 - Menu
-- [x] 이름이 일치하는지 확인하기 - Menu
-- [x] 특정 카테고리 메뉴인지 확인하기 - Menu
-- [ ] 메뉴들을 불변객체로 저장하기 - MenuInformationStorage
+
+### Order 관련
 - [x] 주문 메뉴 입력값 저장 - RequestOrder
-- [x] 주문 메뉴가 실제 메뉴에 있는 메뉴인지 검증 - RequestOrder
-- [ ] 주문 메뉴들 저장 - RequestOrders
-- [ ] 주문 메뉴와 수량 저장 - OrderedMenu
 - [ ] 주문 총 가격 저장 - Price
-- [ ] 주문 메뉴들 저장 - OrderedMenus
+- [ ] 주문 메뉴들 저장 - RequestOrders
 
 ### Event 관련
 - [ ] 각종 이벤트 정보 저장 - EventInformationStorage
