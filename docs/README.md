@@ -28,7 +28,7 @@
 - [x] 주문 메뉴에 대한 가격 계산해 반환 - RequestOrder
 - [x] 주문 총 가격 저장 - Price
 - [x] 주문을 통해 총 가격 업데이트 - Price
-- [ ] 주문 메뉴들 저장 - RequestOrders
+- [x] 주문 메뉴들 저장 - RequestOrders
 
 ### Event 관련
 - [ ] 각종 이벤트 정보 저장 - EventInformationStorage
