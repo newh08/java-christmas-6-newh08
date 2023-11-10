@@ -81,8 +81,8 @@
 - [x] 주문 입력값을 주문 정보 데이터 Dto 로 변환하기 - Converter
  
 ### Service
-- [ ] 주문 정보 Dto 를 통해 주문 정보 객체 생성하기 - OrderService
-- [ ] 주문 정보와 메뉴리스트를 사용해 주문 메뉴 객체 생성하기 - OrderService
+- [x] 요청 주문 Dto 를 통해 주문 정보 객체 생성하기 - OrderService
+- [x] 요청 주문 정보 사용해 주문한 메뉴들 객체 생성하기 - OrderService
 - [ ] 날짜와 주문 메뉴, 이벤트 정보를 통해 결과 생성하기 - EventService
 - [ ] 날짜 정보 Dto 를 통해 날짜 정보 객체 생성하기 - EventService
 
