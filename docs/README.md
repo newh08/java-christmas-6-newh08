@@ -86,7 +86,7 @@
 ### Service
 - [x] 요청 주문 Dto 를 통해 주문 정보 객체 생성하기 - OrderService
 - [x] 요청 주문 정보 사용해 주문한 메뉴들의 DTO 생성하기 - OrderService
-- [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 생성하기 - EventService
+- [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기 - EventService
   - [x] 총 주문 금액이 최소금액보다 작으면 이벤트 실행 X - EventService
 - [x] 날짜 정보 Dto 를 통해 날짜 정보 객체 생성하기 - EventService
 
