@@ -3,6 +3,7 @@ package christmas.model.domain.dto;
 import christmas.model.domain.event.Badge;
 import christmas.model.domain.event.Gift;
 import christmas.model.domain.event.TotalDiscount;
+import java.util.stream.Stream;
 
 public class EventResultsDto {
     private final TotalDiscount totalDiscount;
@@ -17,12 +18,8 @@ public class EventResultsDto {
         this.badge = badge;
     }
 
-    public TotalDiscount getTotalDiscount() {
-        return totalDiscount;
-    }
-
-    public Gift getGift() {
-        return gift;
+    public int getTotalDiscount() {
+        return totalDiscount.getTotalDiscount();
     }
 
     public int getTotalBenefitAmount() {
@@ -31,5 +28,13 @@ public class EventResultsDto {
 
     public Badge getBadge() {
         return badge;
+    }
+
+    public String getGiftMessage() {
+        return gift.getGiftMessage();
+    }
+
+    public Stream<String> getDiscountMessage() {
+        return totalDiscount.makeMessageStream();
     }
 }
