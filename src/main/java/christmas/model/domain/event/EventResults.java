@@ -11,11 +11,14 @@ public class EventResults {
 
     public EventResults() {
         this.totalDiscount = new TotalDiscount();
+        gift = new Gift(0);
+        totalBenefitAmount = 0;
+        badge = Badge.NONE;
     }
 
     public void updateEventResult(OrderedMenus orderedMenus, Date date) {
         totalDiscount.applyDiscount(orderedMenus, date);
-        gift = new Gift(orderedMenus.getTotalPrice());
+        gift = orderedMenus.makeGift();
         totalBenefitAmount = totalDiscount.getTotalDiscount() + gift.getGiftPrice();
         badge = Badge.getBadge(totalBenefitAmount);
     }
