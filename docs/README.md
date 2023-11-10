@@ -33,8 +33,8 @@
 - [x] 카테고리별 주문 수량 반환 - RequestOrders
 
 ### Event 관련
-- [ ] 배지 정보 저장 - Badge
-- [ ] 할인 금액을 통해 배지 등급 결정하기 - Badge
+- [x] 배지 정보 저장 - Badge
+- [x] 할인 금액을 통해 배지 등급 결정하기 - Badge
 - [x] 증정 선물 정보 저장 - Gift
 - [x] 총 주문 금액을 통해 증정선물 결정하기 - Gift
 - [x] 선물 금액 반환하기 - Gift
@@ -48,7 +48,8 @@
 - [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy  
 - [x] 총 할인 금액 저장 - TotalDiscount
 - [x] 모든 할인 전략을 적용 한다. - TotalDiscount
-- [ ] 총 혜택 금액 저장하기 - EventResults
+- [ ] 모든 혜택 저장하기 - EventResults
+- [ ] 
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
 
 ### Util
