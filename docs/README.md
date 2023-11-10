@@ -65,7 +65,7 @@
   - [x] 혜택 업데이트 하기 - EventResults
   - [ ] 혜택 정보 저장소에 저장하기 - EventResults
 ### DTO
-- [x] 날짜 정보를 저장해 전달하기 위한 DTO - RequestDateDto
+- [x] 날짜 정보를 저장해 전달하기 위한 DTO - DateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
 - [x] 날짜 정보를 저장해 view 로 전달하기 위한 DTO - RespondDateDto
 - **주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto**

@@ -1,9 +1,9 @@
 package christmas.model.domain.dto;
 
-public class RequestDateDto {
+public class DateDto {
     private final int date;
 
-    public RequestDateDto(int date) {
+    public DateDto(int date) {
         this.date = date;
     }
 
