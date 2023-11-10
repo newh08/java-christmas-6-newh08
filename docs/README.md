@@ -42,6 +42,7 @@
 - [x] 할인 금액을 통해 배지 등급 결정하기 - Badge
 - [x] 증정 선물 정보 저장 - Gift
 - [x] 총 주문 금액을 통해 증정선물 결정하기 - Gift
+- [x] 금액에 따라 선물 여부 결정해 메시지 출력 기능 구현 - Gift
 - [x] 선물 금액 반환하기 - Gift
 - [x] 할인 금액 저장하기 - Discount (Abstract Class)
 - [x] 할인 금액 업데이트 하기 - Discount (Abstract Class)

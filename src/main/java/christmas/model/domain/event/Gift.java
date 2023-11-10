@@ -1,10 +1,11 @@
 package christmas.model.domain.event;
 
-import christmas.model.domain.order.Price;
-
 public class Gift {
     private static final int MINIMUM_GIFT_PRICE = 120000;
-    private static final int GIFT_PRICE = 25000;
+    private static final int GIFT_PRICE = -25000;
+    private static final String GIFT_TRUE_MESSAGE = "샴페인 1개";
+    private static final String GIFT_FALSE_MESSAGE = "없음";
+
     private final boolean gift;
 
     public Gift(int totalPrice) {
@@ -16,5 +17,12 @@ public class Gift {
             return GIFT_PRICE;
         }
         return 0;
+    }
+
+    public String getGiftMessage() {
+        if (gift) {
+            return GIFT_TRUE_MESSAGE;
+        }
+        return GIFT_FALSE_MESSAGE;
     }
 }
