@@ -11,8 +11,8 @@ public class InputView {
     private static final String REGEX_OF_ORDER = "^([가-힣| ]+-[1-9| ]+[0-9| ]?,?)*";
     private static final String DELIMITER_QUANTITY = "-";
     private static final String DELIMITER_MENU = ",";
-    private static final String INVALID_DATE_MESSAGE = "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.";
-    private static final String INVALID_ORDER_MESSAGE = "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.";
+    private static final String INVALID_DATE_MESSAGE = "유효하지 않은 날짜입니다. 다시 입력해 주세요.";
+    private static final String INVALID_ORDER_MESSAGE = "유효하지 않은 주문입니다. 다시 입력해 주세요.";
 
     public int readDate() {
         System.out.println(INPUT_DATE_MESSAGE);
@@ -50,7 +50,14 @@ public class InputView {
             String[] orderInformation = inputOrder.split(DELIMITER_QUANTITY);
             String menu = orderInformation[0].trim();
             int quantity = Integer.parseInt(orderInformation[1].trim());
+            validateMenuDuplication(map, menu);
             map.put(menu, quantity);
+        }
+    }
+
+    private static void validateMenuDuplication(Map<String, Integer> map, String menu) {
+        if (map.containsKey(menu)) {
+            throw new IllegalArgumentException(INVALID_ORDER_MESSAGE);
         }
     }
 }
