@@ -3,7 +3,7 @@ package christmas.model.domain.event;
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.discount.Discount;
 import christmas.model.domain.event.discount.DiscountStrategy;
-import christmas.model.domain.order.RequestOrders;
+import christmas.model.domain.order.OrderedMenus;
 import java.util.List;
 
 public class TotalDiscount {
@@ -15,9 +15,9 @@ public class TotalDiscount {
         this.totalDiscount = 0;
     }
 
-    public void applyDiscount(RequestOrders requestOrders, Date date) {
+    public void applyDiscount(OrderedMenus orderedMenus, Date date) {
         discounts.stream()
-                .peek(discount -> discount.calculateDiscountAmount(requestOrders, date))
+                .peek(discount -> discount.calculateDiscountAmount(orderedMenus, date))
                 .map(Discount::getDiscountAmount)
                 .forEach(discountAmount -> totalDiscount += discountAmount);
     }

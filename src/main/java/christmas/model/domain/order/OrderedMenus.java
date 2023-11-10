@@ -4,11 +4,11 @@ import christmas.model.domain.menu.MenuCategory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RequestOrders {
+public class OrderedMenus {
     private final List<RequestOrder> requestOrders;
     private final Price totalPrice;
 
-    public RequestOrders() {
+    public OrderedMenus() {
         this.requestOrders = new ArrayList<>();
         totalPrice = new Price();
     }

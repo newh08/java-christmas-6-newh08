@@ -1,7 +1,7 @@
 package christmas.model.domain.event;
 
 import christmas.model.domain.date.Date;
-import christmas.model.domain.order.RequestOrders;
+import christmas.model.domain.order.OrderedMenus;
 
 public class EventResults {
     private final TotalDiscount totalDiscount;
@@ -13,9 +13,9 @@ public class EventResults {
         this.totalDiscount = new TotalDiscount();
     }
 
-    public void updateEventResult(RequestOrders requestOrders, Date date) {
-        totalDiscount.applyDiscount(requestOrders, date);
-        gift = new Gift(requestOrders.getTotalPrice());
+    public void updateEventResult(OrderedMenus orderedMenus, Date date) {
+        totalDiscount.applyDiscount(orderedMenus, date);
+        gift = new Gift(orderedMenus.getTotalPrice());
         totalBenefitAmount = totalDiscount.getTotalDiscount() + gift.getGiftPrice();
         badge = Badge.getBadge(totalBenefitAmount);
     }

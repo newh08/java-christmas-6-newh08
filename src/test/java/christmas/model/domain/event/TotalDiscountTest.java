@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.order.RequestOrder;
-import christmas.model.domain.order.RequestOrders;
+import christmas.model.domain.order.OrderedMenus;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,13 +14,13 @@ class TotalDiscountTest {
     @Test
     void totalDiscountTest() {
         Date date = new Date(23);
-        RequestOrders requestOrders = new RequestOrders();
-        requestOrders.addRequestOrder(new RequestOrder("바비큐립", 2));
-        requestOrders.addRequestOrder(new RequestOrder("티본스테이크", 3));
-        requestOrders.addRequestOrder(new RequestOrder("초코케이크", 2));
+        OrderedMenus orderedMenus = new OrderedMenus();
+        orderedMenus.addRequestOrder(new RequestOrder("바비큐립", 2));
+        orderedMenus.addRequestOrder(new RequestOrder("티본스테이크", 3));
+        orderedMenus.addRequestOrder(new RequestOrder("초코케이크", 2));
 
         TotalDiscount totalDiscount = new TotalDiscount();
-        totalDiscount.applyDiscount(requestOrders, date);
+        totalDiscount.applyDiscount(orderedMenus, date);
         assertThat(totalDiscount.getTotalDiscount()).isEqualTo(13315);
     }
 
