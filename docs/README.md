@@ -63,6 +63,7 @@
 ### DTO
 - [x] 날짜 정보를 저장해 전달하기 위한 DTO - RequestDateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
+- [x] 날짜 정보를 저장해 view 로 전달하기 위한 DTO - RespondDateDto
 - [x] 주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto
 - [x] 혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto
 
