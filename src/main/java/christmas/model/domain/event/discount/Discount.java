@@ -8,12 +8,17 @@ public abstract class Discount {
 
     public abstract void calculateDiscountAmount(OrderedMenus orderedMenus, Date date);
 
+    public abstract String toString();
+
     void updateDiscountAmount(int discountAmount) {
-        this.discountAmount += discountAmount;
+        this.discountAmount -= discountAmount;
+    }
+
+    public boolean isNotZero() {
+        return discountAmount != 0;
     }
 
     public int getDiscountAmount() {
         return discountAmount;
     }
-
 }
