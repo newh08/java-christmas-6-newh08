@@ -7,22 +7,22 @@ import java.util.List;
 
 public class OrderedMenus {
     private final List<RequestOrder> requestOrders;
-    private final Price totalPrice;
+    private final TotalOrderPrice totalOrderPrice;
 
     public OrderedMenus(List<RequestOrder> requestOrderList) {
         this.requestOrders = requestOrderList;
-        totalPrice = new Price();
+        totalOrderPrice = new TotalOrderPrice();
         updatePrice();
     }
 
     private void updatePrice() {
         for (RequestOrder requestOrder : requestOrders) {
-            totalPrice.updatePrice(requestOrder);
+            totalOrderPrice.updateTotalOrderPrice(requestOrder);
         }
     }
 
     public Gift makeGift() {
-        return totalPrice.makeGiftAccordingOrderPrice();
+        return totalOrderPrice.makeGiftPerTotalOrderPrice();
     }
 
     public int getNumberOfSpecificCatalogOrder(MenuCategory menuCategory) {
@@ -36,7 +36,7 @@ public class OrderedMenus {
         return Collections.unmodifiableList(requestOrders);
     }
 
-    public Price getTotalPrice() {
-        return totalPrice;
+    public TotalOrderPrice getTotalOrderPrice() {
+        return totalOrderPrice;
     }
 }

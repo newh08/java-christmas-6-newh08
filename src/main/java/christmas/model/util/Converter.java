@@ -16,7 +16,7 @@ public class Converter {
     }
 
     public static OrderedMenusDto from(final OrderedMenus orderedMenus) {
-        return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalPrice());
+        return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalOrderPrice());
     }
 
     public static DateDto from(final int inputDate) {
