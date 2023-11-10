@@ -7,12 +7,20 @@ import org.junit.jupiter.api.Test;
 
 class OrderedMenusTest {
 
-    @DisplayName("각 카테고리별 주문 수량을 반환한다.")
-    @Test
-    void requestOrdersTest_1() {
+    // 테스트에 사용하기 위해 OrderedMenus 제공
+    public static OrderedMenus makeOrderedMenus() {
         OrderedMenus orderedMenus = new OrderedMenus();
         orderedMenus.addRequestOrder(new RequestOrder("타파스", 3));
         orderedMenus.addRequestOrder(new RequestOrder("바비큐립", 2));
+        orderedMenus.addRequestOrder(new RequestOrder("아이스크림", 3));
+
+        return orderedMenus;
+    }
+
+    @DisplayName("각 카테고리별 주문 수량을 반환한다.")
+    @Test
+    void requestOrdersTest_1() {
+        OrderedMenus orderedMenus = makeOrderedMenus();
 
         int numberOfAppetizerOrder = orderedMenus.getNumberOfSpecificCatalogOrder(MenuCategory.APPETIZER);
         int numberOfMainOrder = orderedMenus.getNumberOfSpecificCatalogOrder(MenuCategory.MAIN);
