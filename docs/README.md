@@ -96,4 +96,9 @@
 - [ ] 주문 메뉴 Dto 를 View 에 전달하기 - ChristmasEventController
 - [ ] 혜택 결과 Dto 를 View 에 전달하기 - ChristmasEventController
 
-
+# View
+- **입력값을 위한 InputView**
+  - [x] 날짜 입력해 숫자로 반환
+    - [x] 숫자인지 검증
+  - [x] 주문 입력해 주문 형식으로 반환
+    - [x] 형식에 맞는지 검증
