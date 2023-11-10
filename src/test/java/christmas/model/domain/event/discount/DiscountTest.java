@@ -32,4 +32,13 @@ class DiscountTest {
 
         assertThat(discount.getDiscountAmount()).isEqualTo(2300);
     }
+
+    @DisplayName("SpecialDay 로 이벤트 할인 금액을 계산하면 1000원이 나온다.")
+    @Test
+    void discountTest_Special() {
+        Discount discount = new SpecialDiscount();
+        discount.calculateDiscountAmount(requestOrders, specialDate);
+
+        assertThat(discount.getDiscountAmount()).isEqualTo(1000);
+    }
 }
