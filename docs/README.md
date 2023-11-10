@@ -86,10 +86,9 @@
 - [x] 요청 주문 정보 사용해 주문한 메뉴들의 DTO 생성하기 - OrderService
 - [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기 - EventService
   - [x] 총 주문 금액이 최소금액보다 작으면 이벤트 실행 X - EventService
-- [x] 날짜 정보 Dto 를 통해 날짜 정보 객체 생성하기 - EventService
 
 # Controller
-- [ ] 날짜 정보를 converter 통해 Dto 로 받기 - ChristmasEventController
+- [ ] 날짜 정보를 converter 통해 Dto 생성 - ChristmasEventController
 - [ ] 주문 정보를 converter 통해 Dto 로 받기 - ChristmasEventController
 - [ ] 주문 메뉴 Dto 를 View 에 전달하기 - ChristmasEventController
 - [ ] 혜택 결과 Dto 를 View 에 전달하기 - ChristmasEventController
