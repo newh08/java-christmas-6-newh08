@@ -8,67 +8,71 @@
 
 # Model
 ### Date 관련
-- [x] 날짜 정보 저장 - Date
-- [x] 크리스마스 디데이 확인하기 - Date
-- [x] 특별 할인 날인지 확인하기 - Date
-- [x] 주말인지 확인하기 - Date
-- [x] DTO 생성 - Date
-- [x] 특별 할인 날짜 저장 - SpecialDate (Enum)
-- [x] 특별 할인 날인지 확인하기 - SpecialDate (Enum)
+- **날짜 정보 저장 - Date**
+  - [x] 크리스마스 디데이 확인하기
+  - [x] 특별 할인 날인지 확인하기
+  - [x] 주말인지 확인하기
+  - [x] DTO 생성
+- **특별 할인 날짜 저장 - SpecialDate (Enum)**
+  - [x] 특별 할인 날인지 확인하기 
 
 ### Menu 관련
-- [x] 각종 메뉴의 이름, 가격, 카테고리 보관 - Menu (Enum)
-- [x] 특정 이름인지 확인 - Menu (Enum)
-- [x] 특정 카테고리인지 확인 - Menu (Enum)
-- [x] 특정 이름을 받아 동일한 이름의 메뉴 반환하기 - Menu (Enum)
-- [x] 이름 반환하기 - Menu (Enum)
-- [x] 메뉴의 카테고리 보관 - MenuCategory (Enum)
-- [x] 특정 카테고리인지 확인 - MenuCategory (Enum)
+- **각종 메뉴의 이름, 가격, 카테고리 보관 - Menu (Enum)**
+  - [x] 특정 이름인지 확인
+  - [x] 특정 카테고리인지 확인
+  - [x] 특정 이름을 받아 동일한 이름의 메뉴 반환하기
+  - [x] 이름 반환하기
+- **메뉴의 카테고리 보관 - MenuCategory (Enum)**
+  - [x] 특정 카테고리인지 확인
 
 ### Order 관련
-- [x] 주문 메뉴 입력값 저장 - RequestOrder
-- [x] 주문 메뉴에 대한 가격 계산해 반환 - RequestOrder
-- [x] 주문이 특정 카테고리인지 반환 - RequestOrder
-- [x] 주문 총 가격 저장 - Price
-- [x] 주문을 통해 총 가격 업데이트 - Price
-- [x] 주문 금액에 의해 선물을 반환하는 기능 - Price
-- [x] 주문 메뉴들 저장 - OrderedMenus
-- [x] 카테고리별 주문 수량 반환 - OrderedMenus
-- [x] Price 에서 만든 Gift 반환 - OrderedMenus
-- [x] 총 주문 금액 반환 - OrderedMenus
+- **주문 메뉴 입력값 저장 - RequestOrder**
+  - [x] 주문 메뉴에 대한 가격 계산해 반환
+  - [x] 주문이 특정 카테고리인지 반환
+  - [ ] 출력 메시지 생성해 반환하기
+- **주문 총 가격 저장 - Price**
+  - [x] 주문을 통해 총 가격 업데이트
+  - [x] 주문 금액에 의해 선물을 반환하는 기능
+- **주문 메뉴들 저장 - OrderedMenus**
+  - [x] 카테고리별 주문 수량 반환
+  - [x] Price 에서 만든 Gift 반환
+  - [x] 총 주문 금액 반환 
 
 ### Event 관련
-- [x] 배지 정보 저장 - Badge
-- [x] 출력 메시지 위해 배지 이름 추가 및 toString 오버라이딩 - Badge
-- [x] 할인 금액을 통해 배지 등급 결정하기 - Badge
-- [x] 증정 선물 정보 저장 - Gift
-- [x] 총 주문 금액을 통해 증정선물 결정하기 - Gift
-- [x] 금액에 따라 선물 여부 결정해 메시지 출력 기능 구현 - Gift
-- [x] 선물 금액 반환하기 - Gift
-- [x] 할인 금액 저장하기 - Discount (Abstract Class)
-- [x] 할인 금액 업데이트 하기 - Discount (Abstract Class)
-- [x] 할인 금액 계산하기(추상 메서드) - Discount (Abstract Class)
-  - [x] 크리스마스 디데이 할인 - ChristmasDiscount
-  - [x] 특별 할인 - SpecialDiscount
-  - [x] 평일 할인 - WeekDiscount
-  - [x] 주말 할인 - WeekendDiscount
-- [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount
-- [x] 각 Discount 의 금액이 0원이 아닌지 확인하는 기능 구현 - Discount
-- [x] 각 Discount 를 리셋하기 - Discount
+- **배지 정보 저장 - Badge**
+  - [x] 출력 메시지 위해 배지 이름 추가 및 toString 오버라이딩
+  - [x] 할인 금액을 통해 배지 등급 결정하기
+- **증정 선물 정보 저장 - Gift**
+  - [x] 총 주문 금액을 통해 증정선물 결정하기
+  - [x] 금액에 따라 선물 여부 결정해 메시지 출력 기능 구현
+  - [x] 선물 금액 반환하기
+- **할인 금액 저장하기 - Discount (Abstract Class)**
+  - [x] 할인 금액 업데이트 하기
+  - [x] 할인 금액 계산하기(추상 메서드)
+    - [x] 크리스마스 디데이 할인 - ChristmasDiscount
+    - [x] 특별 할인 - SpecialDiscount
+    - [x] 평일 할인 - WeekDiscount
+    - [x] 주말 할인 - WeekendDiscount
+  - [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount
+  - [x] 각 Discount 의 금액이 0원이 아닌지 확인하는 기능 구현
+  - [x] 각 Discount 를 리셋하기
 - [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy  
-- [x] 총 할인 금액 저장 - TotalDiscount
-- [x] 모든 할인 전략을 적용 한다. - TotalDiscount
-- [x] 0원 이상의 모든 할인 전략 출력 메시지 만들기 - TotalDiscount
-- [x] 모든 혜택 저장 및 업데이트 하기 - EventResults
-- [ ] 혜택 정보 저장소에 저장하기 - EventResults
+- **총 할인 금액 저장 - TotalDiscount**
+  - [x] 모든 할인 전략을 적용 하기
+  - [x] 0원 이상의 모든 할인 전략 출력 메시지 만들기
+- **모든 혜택 저장 및 업데이트 하기 - EventResults**
+  - [x] 혜택 업데이트 하기 - EventResults
+  - [ ] 혜택 정보 저장소에 저장하기 - EventResults
 ### DTO
 - [x] 날짜 정보를 저장해 전달하기 위한 DTO - RequestDateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
 - [x] 날짜 정보를 저장해 view 로 전달하기 위한 DTO - RespondDateDto
-- [x] 주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto
+- **주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto**
   - [x] 메뉴 출력 메시지 생성해 반환
   - [x] 주문 금액 반환
-- [x] 혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto
+- **혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto**
+  - [ ] 할인 메시지를 스트림으로 반환하기
+  - [ ] 증정 상품 메시지 생성해 반환하기
 
 ### Util
 - [x] 주문 메뉴 출력을 위해 데이터를 Dto 로 변환하기 - Converter
