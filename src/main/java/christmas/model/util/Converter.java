@@ -32,4 +32,8 @@ public class Converter {
     public static OrderedMenus from(OrderedMenusDto orderedMenusDto) {
         return new OrderedMenus(orderedMenusDto.getRequestOrders());
     }
+
+    public static Date from(DateDto dateDto) {
+        return new Date(dateDto.getDate());
+    }
 }
