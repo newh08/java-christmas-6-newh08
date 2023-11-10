@@ -50,6 +50,11 @@
 - [x] 모든 할인 전략을 적용 한다. - TotalDiscount
 - [x] 모든 혜택 저장 및 업데이트 하기 - EventResults
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
+### DTO
+- [x] 날짜 정보를 저장해 전달하기 위한 DTO - RequestDateDto
+- [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
+- [x] 주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto
+- [x] 혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto
 
 ### Util
 - [ ] 주문 메뉴 출력을 위해 데이터를 Dto 로 변환하기 - Converter
