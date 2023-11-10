@@ -41,4 +41,13 @@ class DiscountTest {
 
         assertThat(discount.getDiscountAmount()).isEqualTo(1000);
     }
+
+    @DisplayName("평일에 디져트 2개를 주문으로 할일 금액을 계산하면 4046 이 나온다.")
+    @Test
+    void discountTest_Week() {
+        Discount discount = new WeekDiscount();
+        discount.calculateDiscountAmount(requestOrders, normalDate);
+
+        assertThat(discount.getDiscountAmount()).isEqualTo(4046);
+    }
 }
