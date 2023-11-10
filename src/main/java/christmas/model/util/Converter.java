@@ -6,6 +6,7 @@ import christmas.model.domain.dto.RequestDateDto;
 import christmas.model.domain.dto.RequestOrderDto;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
+import java.util.Map.Entry;
 
 public class Converter {
     public static EventResultsDto from(final EventResults eventResults) {
@@ -21,7 +22,13 @@ public class Converter {
         return new RequestDateDto(inputDate);
     }
 
-    public static RequestOrderDto from(final String inputMenu, final int inputQuantity) {
+    public static RequestOrderDto from(Entry<String, Integer> input) {
+        String inputMenu = input.getKey();
+        Integer inputQuantity = input.getValue();
         return new RequestOrderDto(inputMenu, inputQuantity);
+    }
+
+    public static OrderedMenus from(OrderedMenusDto orderedMenusDto) {
+        return new OrderedMenus(orderedMenusDto.getRequestOrders());
     }
 }
