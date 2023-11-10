@@ -23,6 +23,11 @@ public class ChristmasDiscount extends Discount{
         return String.format(CHRISTMAS_DISCOUNT_MESSAGE, getDiscountAmount());
     }
 
+    @Override
+    public void reset() {
+        resetDiscount();
+    }
+
     private int calculateToCountDiscountDay(int dDayFromChristmas) {
         return NUMBER_TO_COUNT_DISCOUNT_DAY - dDayFromChristmas;
     }

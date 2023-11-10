@@ -15,6 +15,7 @@ public enum DiscountStrategy {
     public static List<Discount> getAllDiscountStrategy() {
         return Arrays.stream(values())
                 .map(discountStrategy -> discountStrategy.discount)
+                .peek(Discount::reset)
                 .toList();
     }
 }

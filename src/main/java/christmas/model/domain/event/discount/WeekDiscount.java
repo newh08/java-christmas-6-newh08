@@ -19,6 +19,11 @@ public class WeekDiscount extends Discount {
     }
 
     @Override
+    public void reset() {
+        resetDiscount();
+    }
+
+    @Override
     public String toString() {
         return String.format(SPECIAL_DISCOUNT_MESSAGE, getDiscountAmount());
     }
