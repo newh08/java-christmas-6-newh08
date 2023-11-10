@@ -1,5 +1,6 @@
 package christmas.model.domain.order;
 
+import christmas.model.domain.event.Gift;
 import christmas.model.domain.menu.MenuCategory;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,6 +20,10 @@ public class OrderedMenus {
         totalPrice.updatePrice(requestOrder);
     }
 
+    public Gift makeGift() {
+        return totalPrice.makeGiftAccordingOrderPrice();
+    }
+
     public int getNumberOfSpecificCatalogOrder(MenuCategory menuCategory) {
         return requestOrders.stream()
                 .filter(order -> order.checkCatalog(menuCategory))
@@ -32,5 +37,9 @@ public class OrderedMenus {
 
     public Price getTotalPrice() {
         return totalPrice;
+    }
+
+    public int getTotalOrderPrice() {
+        return totalPrice.getPrice();
     }
 }

@@ -32,6 +32,8 @@
 - [x] 주문 금액에 의해 선물을 반환하는 기능 - Price
 - [x] 주문 메뉴들 저장 - OrderedMenus
 - [x] 카테고리별 주문 수량 반환 - OrderedMenus
+- [x] Price 에서 만든 Gift 반환 - OrderedMenus
+- [x] 총 주문 금액 반환 - OrderedMenus
 
 ### Event 관련
 - [x] 배지 정보 저장 - Badge
