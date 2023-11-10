@@ -25,4 +25,7 @@ public class RequestOrders {
                 .sum();
     }
 
+    public Price getTotalPrice() {
+        return totalPrice;
+    }
 }
