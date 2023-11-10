@@ -25,13 +25,10 @@ public class Date {
     }
 
     public int getDDayFromChristmas() {
-        if (isAfterChristmas()) {
-            return -1;
-        }
         return CHRISTMAS_DATE - date;
     }
 
-    private boolean isAfterChristmas() {
+    public boolean isAfterChristmas() {
         return date > CHRISTMAS_DATE;
     }
 }
