@@ -2,6 +2,7 @@ package christmas.model.domain.dto;
 
 import christmas.model.domain.order.Price;
 import christmas.model.domain.order.RequestOrder;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,11 @@ public class OrderedMenusDto {
                 .collect(Collectors.joining("\n"));
     }
 
-    public int getTotalPrice() {
+    public int getTotalOrderPrice() {
         return price.getPrice();
+    }
+
+    public List<RequestOrder> getRequestOrders() {
+        return Collections.unmodifiableList(requestOrders);
     }
 }
