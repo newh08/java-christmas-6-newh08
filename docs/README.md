@@ -45,6 +45,7 @@
   - [x] 특별 할인 - SpecialDiscount
   - [x] 평일 할인 - WeekDiscount
   - [x] 주말 할인 - WeekendDiscount
+- [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount 
 - [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy  
 - [x] 총 할인 금액 저장 - TotalDiscount
 - [x] 모든 할인 전략을 적용 한다. - TotalDiscount

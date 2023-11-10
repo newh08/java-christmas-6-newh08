@@ -5,10 +5,10 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class OrderedMenusTest {
+public class OrderedMenusTest {
 
     // 테스트에 사용하기 위해 OrderedMenus 제공
-    public static OrderedMenus makeOrderedMenus() {
+    public static OrderedMenus makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer() {
         OrderedMenus orderedMenus = new OrderedMenus();
         orderedMenus.addRequestOrder(new RequestOrder("타파스", 3));
         orderedMenus.addRequestOrder(new RequestOrder("바비큐립", 2));
@@ -20,7 +20,7 @@ class OrderedMenusTest {
     @DisplayName("각 카테고리별 주문 수량을 반환한다.")
     @Test
     void requestOrdersTest_1() {
-        OrderedMenus orderedMenus = makeOrderedMenus();
+        OrderedMenus orderedMenus = makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
 
         int numberOfAppetizerOrder = orderedMenus.getNumberOfSpecificCatalogOrder(MenuCategory.APPETIZER);
         int numberOfMainOrder = orderedMenus.getNumberOfSpecificCatalogOrder(MenuCategory.MAIN);
