@@ -57,10 +57,10 @@
 - [x] 혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto
 
 ### Util
-- [ ] 주문 메뉴 출력을 위해 데이터를 Dto 로 변환하기 - Converter
-- [ ] 혜택 결과 출력을 위해 데이터를 Dto 로 변환하기 - Converter
-- [ ] 날짜 입력값을 날짜 정보 데이터 Dto 로 변환하기 - Converter
-- [ ] 주문 입력값을 주문 정보 데이터 Dto 로 변환하기 - Converter
+- [x] 주문 메뉴 출력을 위해 데이터를 Dto 로 변환하기 - Converter
+- [x] 혜택 결과 출력을 위해 데이터를 Dto 로 변환하기 - Converter
+- [x] 날짜 입력값을 날짜 정보 데이터 Dto 로 변환하기 - Converter
+- [x] 주문 입력값을 주문 정보 데이터 Dto 로 변환하기 - Converter
  
 ### Service
 - [ ] 주문 정보 Dto 를 통해 주문 정보 객체 생성하기 - OrderService
