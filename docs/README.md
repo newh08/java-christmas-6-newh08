@@ -45,6 +45,7 @@
   - [x] 특별 할인 - SpecialDiscount
   - [x] 평일 할인 - WeekDiscount
   - [x] 주말 할인 - WeekendDiscount
+- [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy  
 - [x] 총 할인 금액 저장 - TotalDiscount
 - [ ] 총 혜택 금액 저장하기 - EventResults
 - [ ] 혜택 정보 저장소에 저장하기 - EventResults
