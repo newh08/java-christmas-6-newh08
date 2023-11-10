@@ -1,5 +1,6 @@
 package christmas.model.domain.event;
 
+import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.order.TotalOrderPrice;
 import christmas.model.domain.order.RequestOrder;
 import org.assertj.core.api.Assertions;

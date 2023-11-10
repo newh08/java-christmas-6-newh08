@@ -1,4 +1,4 @@
-package christmas.model.domain.event;
+package christmas.model.domain.event.benefit;
 
 import java.util.stream.Stream;
 

@@ -1,6 +1,8 @@
 package christmas.model.domain.event;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.Gift;
+import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.OrderedMenus;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

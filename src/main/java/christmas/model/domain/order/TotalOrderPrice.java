@@ -1,6 +1,6 @@
 package christmas.model.domain.order;
 
-import christmas.model.domain.event.Gift;
+import christmas.model.domain.event.benefit.Gift;
 
 public class TotalOrderPrice {
     private int totalOrderPrice;

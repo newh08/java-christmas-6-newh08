@@ -3,6 +3,8 @@ package christmas.model.domain.event;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.Gift;
+import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.OrderedMenusTest;
 import org.junit.jupiter.api.DisplayName;
