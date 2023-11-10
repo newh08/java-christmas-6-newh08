@@ -1,10 +1,13 @@
 package christmas.model.domain.event;
 
+import java.util.stream.Stream;
+
 public class Gift {
     private static final int MINIMUM_GIFT_PRICE = 120000;
     private static final int GIFT_PRICE = -25000;
     private static final String GIFT_TRUE_MESSAGE = "샴페인 1개";
     private static final String GIFT_FALSE_MESSAGE = "없음";
+    private static final String GIFT_BENEFIT_MESSAGE = "증정 이벤트: %,d원";
 
     private final boolean gift;
 
@@ -24,5 +27,12 @@ public class Gift {
             return GIFT_TRUE_MESSAGE;
         }
         return GIFT_FALSE_MESSAGE;
+    }
+
+    public Stream<String> getGiftBenefitMessage() {
+        if (gift) {
+            return Stream.of(String.format(GIFT_BENEFIT_MESSAGE, GIFT_PRICE));
+        }
+        return Stream.empty();
     }
 }
