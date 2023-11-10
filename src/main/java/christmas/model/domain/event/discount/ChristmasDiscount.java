@@ -11,10 +11,10 @@ public class ChristmasDiscount extends Discount{
 
     @Override
     public void calculateDiscountAmount(OrderedMenus orderedMenus, Date date) {
-        int dDayFromChristmas = date.getDDayFromChristmas();
-        if (dDayFromChristmas < 0) {
+        if (date.isAfterChristmas()) {
             return;
         }
+        int dDayFromChristmas = date.getDDayFromChristmas();
         super.updateDiscountAmount(BASIC_DISCOUNT_AMOUNT + calculateToCountDiscountDay(dDayFromChristmas) * ADDITIONAL_DISCOUNT_AMOUNT_PER_DAY);
     }
 

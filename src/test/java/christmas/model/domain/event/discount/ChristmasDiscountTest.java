@@ -21,4 +21,15 @@ class ChristmasDiscountTest {
         Assertions.assertThat(christmasDiscount.toString()).isEqualTo("크리스마스 디데이 할인: -1,200원");
     }
 
+    @DisplayName("26일 가지고 discount 를 계산 하면 할인은 없다.")
+    @Test
+    void christmasDiscountTest_2() {
+        OrderedMenus orderedMenus = makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
+        Date date = new Date(26);
+
+        ChristmasDiscount christmasDiscount = new ChristmasDiscount();
+        christmasDiscount.calculateDiscountAmount(orderedMenus, date);
+        Assertions.assertThat(christmasDiscount.toString()).isEqualTo("크리스마스 디데이 할인: 0원");
+    }
+
 }
