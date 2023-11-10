@@ -24,7 +24,7 @@ public class InputView {
         }
     }
 
-    public Map<String, Integer> readOrder() {
+    public Map<String, Integer> readOrders() {
         System.out.println(INPUT_ORDER_MESSAGE);
         String inputString = Console.readLine();
         validateInputByRegex(inputString);
