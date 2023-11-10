@@ -2,6 +2,7 @@ package christmas.model.domain.order;
 
 import christmas.model.domain.menu.MenuCategory;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OrderedMenus {
@@ -23,6 +24,10 @@ public class OrderedMenus {
                 .filter(order -> order.checkCatalog(menuCategory))
                 .mapToInt(RequestOrder::getQuantity)
                 .sum();
+    }
+
+    public List<RequestOrder> getRequestOrders() {
+        return Collections.unmodifiableList(requestOrders);
     }
 
     public Price getTotalPrice() {

@@ -9,7 +9,7 @@ public class EventResults {
     private int totalBenefitAmount;
     private Badge badge;
 
-    public EventResults(TotalDiscount totalDiscount) {
+    public EventResults() {
         this.totalDiscount = new TotalDiscount();
     }
 
@@ -18,5 +18,21 @@ public class EventResults {
         gift = new Gift(orderedMenus.getTotalPrice());
         totalBenefitAmount = totalDiscount.getTotalDiscount() + gift.getGiftPrice();
         badge = Badge.getBadge(totalBenefitAmount);
+    }
+
+    public TotalDiscount getTotalDiscount() {
+        return totalDiscount;
+    }
+
+    public Gift getGift() {
+        return gift;
+    }
+
+    public int getTotalBenefitAmount() {
+        return totalBenefitAmount;
+    }
+
+    public Badge getBadge() {
+        return badge;
     }
 }
