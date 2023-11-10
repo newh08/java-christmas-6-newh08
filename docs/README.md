@@ -20,6 +20,7 @@
 - [x] 특정 이름인지 확인 - Menu (Enum)
 - [x] 특정 카테고리인지 확인 - Menu (Enum)
 - [x] 특정 이름을 받아 동일한 이름의 메뉴 반환하기 - Menu (Enum)
+- [x] 이름 반환하기 - Menu (Enum)
 - [x] 메뉴의 카테고리 보관 - MenuCategory (Enum)
 - [x] 특정 카테고리인지 확인 - MenuCategory (Enum)
 
