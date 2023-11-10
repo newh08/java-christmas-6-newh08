@@ -11,8 +11,8 @@ import java.util.Map.Entry;
 
 public class Converter {
     public static EventResultsDto from(final EventResults eventResults) {
-        return new EventResultsDto(eventResults.getTotalDiscount(), eventResults.getGift(),
-                eventResults.getTotalBenefitAmount(), eventResults.getBadge());
+        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getTotalBenefitAmount(),
+                eventResults.getBadge());
     }
 
     public static OrderedMenusDto from(final OrderedMenus orderedMenus) {
