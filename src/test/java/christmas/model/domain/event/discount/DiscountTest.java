@@ -50,4 +50,13 @@ class DiscountTest {
 
         assertThat(discount.getDiscountAmount()).isEqualTo(4046);
     }
+
+    @DisplayName("주말에 메인 4개를 주문으로 할일 금액을 계산하면 8092 가 나온다.")
+    @Test
+    void discountTest_Weekend() {
+        Discount discount = new WeekendDiscount();
+        discount.calculateDiscountAmount(requestOrders, weekendDate);
+
+        assertThat(discount.getDiscountAmount()).isEqualTo(8092);
+    }
 }
