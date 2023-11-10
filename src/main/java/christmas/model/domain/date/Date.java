@@ -1,10 +1,13 @@
 package christmas.model.domain.date;
 
+import christmas.model.domain.dto.RespondDateDto;
+
 public class Date {
     private static final int CHRISTMAS_DATE = 25;
     private static final int WEEK = 7;
     private static final int FIRST_FRIDAY = 1;
     private static final int FIRST_SATURDAY = 2;
+
     private final int date;
 
     public Date(int date) {
@@ -32,5 +35,9 @@ public class Date {
 
     private boolean isAfterChristmas() {
         return date > CHRISTMAS_DATE;
+    }
+
+    public RespondDateDto makeRespondDateDto() {
+        return new RespondDateDto(date);
     }
 }

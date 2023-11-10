@@ -12,6 +12,7 @@
 - [x] 크리스마스 디데이 확인하기 - Date
 - [x] 특별 할인 날인지 확인하기 - Date
 - [x] 주말인지 확인하기 - Date
+- [x] DTO 생성 - Date
 - [x] 특별 할인 날짜 저장 - SpecialDate (Enum)
 - [x] 특별 할인 날인지 확인하기 - SpecialDate (Enum)
 
