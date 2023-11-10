@@ -30,7 +30,7 @@ public class OutputView {
         System.out.printf(FORMAT_OF_PRICE, orderedMenusDto.getTotalOrderPrice());
     }
 
-    public void pintEventResult(EventResultsDto eventResultsDto, OrderedMenusDto orderedMenusDto) {
+    public void printEventResult(EventResultsDto eventResultsDto, OrderedMenusDto orderedMenusDto) {
         printGift(eventResultsDto);
         printTotalBenefit(eventResultsDto);
         printTotalBenefitAmount(eventResultsDto);
