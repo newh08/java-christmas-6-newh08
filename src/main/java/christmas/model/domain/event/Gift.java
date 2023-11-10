@@ -7,8 +7,8 @@ public class Gift {
     private static final int GIFT_PRICE = 25000;
     private final boolean gift;
 
-    public Gift(Price totalPrice) {
-        this.gift = totalPrice.getPrice() >= MINIMUM_GIFT_PRICE;
+    public Gift(int totalPrice) {
+        this.gift = totalPrice >= MINIMUM_GIFT_PRICE;
     }
 
     public int getGiftPrice() {
