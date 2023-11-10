@@ -11,7 +11,6 @@ import christmas.view.OutputView;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class ChristmasEventController {
     private final ChristmasEventService christmasEventService;
@@ -25,8 +24,7 @@ public class ChristmasEventController {
     }
 
     public void start() {
-        int userInputDate = repeat(inputView::readDate);
-        DateDto dateDto = Converter.from(userInputDate);
+        DateDto dateDto = repeat(this::makeDateDto);
 
         OrderedMenusDto orderedMenusDto = repeat(this::makeOrderMenusDto);
 
@@ -36,6 +34,11 @@ public class ChristmasEventController {
 
         EventResultsDto eventResultsDto = christmasEventService.makeEventResults(orderedMenusDto, dateDto);
         outputView.printEventResult(eventResultsDto, orderedMenusDto);
+    }
+
+    private DateDto makeDateDto() {
+        int userInputDate = repeat(inputView::readDate);
+        return Converter.from(userInputDate);
     }
 
     private OrderedMenusDto makeOrderMenusDto() {
@@ -48,7 +51,7 @@ public class ChristmasEventController {
         return userInputOrders.entrySet().stream()
                 .map(Converter::from)
                 .map(christmasEventService::makeRequestOrder)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     private <T> T repeat(Supplier<T> something) {
@@ -60,5 +63,4 @@ public class ChristmasEventController {
             }
         }
     }
-
 }
