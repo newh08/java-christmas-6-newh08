@@ -2,7 +2,6 @@ package christmas.model.domain.dto;
 
 import christmas.model.domain.event.Badge;
 import christmas.model.domain.event.EventBenefits;
-import java.util.stream.Stream;
 
 public class EventResultsDto {
     private final EventBenefits eventBenefits;
@@ -29,7 +28,7 @@ public class EventResultsDto {
 
     public String getGiftMessage() { return eventBenefits.getGiftMessage();}
 
-    public Stream<String> getBenefitMessage() {
-        return eventBenefits.makeBenefitMessageStream();
+    public String getBenefitMessage() {
+        return eventBenefits.makeBenefitMessage();
     }
 }

@@ -3,8 +3,6 @@ package christmas.view;
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class OutputView {
     private static final String RESULT_PRINT_OPENING_MESSAGE = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n";
@@ -16,6 +14,7 @@ public class OutputView {
     private static final String TOTAL_PRICE_AFTER_DISCOUNT = "\n<할인 후 예상 결제 금액>";
     private static final String DECEMBER_BADGE = "\n<12월 이벤트 배지>";
     private static final String FORMAT_OF_PRICE = "%,d원\n";
+    private static final String EMPTY = "없음";
 
     public void printStartOfBenefitInfo(DateDto dateDto) {
         System.out.printf(RESULT_PRINT_OPENING_MESSAGE, dateDto.getDate());
@@ -46,8 +45,8 @@ public class OutputView {
 
     private void printTotalBenefit(EventResultsDto eventResultsDto) {
         System.out.println(BENEFIT_LIST);
-        Stream<String> benefitMessageStream = eventResultsDto.getBenefitMessage();
-        String benefitMessage = benefitMessageStream.collect(Collectors.joining("\n"));
+        String benefitMessage = eventResultsDto.getBenefitMessage();
+
 
         if (benefitMessage.isEmpty()) {
             System.out.println(EMPTY);
@@ -70,5 +69,9 @@ public class OutputView {
     private void printBadge(EventResultsDto eventResultsDto) {
         System.out.println(DECEMBER_BADGE);
         System.out.println(eventResultsDto.getBadge());
+    }
+
+    public void printError(IllegalArgumentException e) {
+        System.out.println(e.getMessage());
     }
 }

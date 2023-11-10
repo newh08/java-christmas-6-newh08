@@ -5,8 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import christmas.model.domain.date.Date;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.OrderedMenusTest;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +20,7 @@ class EventBenefitsTest {
 
         String giftMessage = eventBenefits.getGiftMessage();
         assertThat(giftMessage).isEqualTo("없음");
-        List<String> benefitMessage = eventBenefits.makeBenefitMessageStream().collect(Collectors.toList());
+        String benefitMessage = eventBenefits.makeBenefitMessage();
         assertThat(benefitMessage).contains("평일 할인: -6,069원");
     }
 

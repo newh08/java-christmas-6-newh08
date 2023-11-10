@@ -2,6 +2,7 @@ package christmas.model.domain.event;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.order.OrderedMenus;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class EventBenefits {
@@ -21,10 +22,11 @@ public class EventBenefits {
         this.gift = gift;
     }
 
-    public Stream<String> makeBenefitMessageStream() {
+    public String makeBenefitMessage() {
         Stream<String> discountBenefitMessage = totalDiscount.makeMessageStream();
         Stream<String> giftBenefitMessage = gift.getGiftBenefitMessage();
-        return Stream.concat(discountBenefitMessage, giftBenefitMessage);
+        return Stream.concat(discountBenefitMessage, giftBenefitMessage)
+                .collect(Collectors.joining("\n"));
     }
 
     public int getTotalDiscount() {
