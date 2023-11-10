@@ -1,8 +1,8 @@
 package christmas.view;
 
+import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
-import christmas.model.domain.dto.RespondDateDto;
 import java.util.stream.Stream;
 
 public class OutputView {
@@ -16,8 +16,8 @@ public class OutputView {
     private static final String DECEMBER_BADGE = "\n<12월 이벤트 배지>";
     private static final String FORMAT_OF_PRICE = "%,d원\n";
 
-    public void printStartOfBenefitInfo(RespondDateDto respondDateDto) {
-        System.out.printf(RESULT_PRINT_OPENING_MESSAGE, respondDateDto.getDate());
+    public void printStartOfBenefitInfo(DateDto dateDto) {
+        System.out.printf(RESULT_PRINT_OPENING_MESSAGE, dateDto.getDate());
     }
 
     public void printOrder(OrderedMenusDto orderedMenusDto) {
