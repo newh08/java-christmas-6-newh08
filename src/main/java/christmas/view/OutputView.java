@@ -3,6 +3,7 @@ package christmas.view;
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class OutputView {
@@ -45,8 +46,14 @@ public class OutputView {
 
     private void printTotalBenefit(EventResultsDto eventResultsDto) {
         System.out.println(BENEFIT_LIST);
-        Stream<String> discountMessage = eventResultsDto.getDiscountMessage();
-        discountMessage.forEach(System.out::println);
+        Stream<String> benefitMessageStream = eventResultsDto.getBenefitMessage();
+        String benefitMessage = benefitMessageStream.collect(Collectors.joining("\n"));
+
+        if (benefitMessage.isEmpty()) {
+            System.out.println(EMPTY);
+            return;
+        }
+        System.out.println(benefitMessage);
     }
 
     private void printTotalBenefitAmount(EventResultsDto eventResultsDto) {
