@@ -4,6 +4,7 @@ import christmas.model.domain.menu.Menu;
 import christmas.model.domain.menu.MenuCategory;
 
 public class RequestOrder {
+    private static final String ORDER_MESSAGE = "%s %d개";
     private final Menu menu;
     private final int quantity;
 
@@ -22,5 +23,10 @@ public class RequestOrder {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(ORDER_MESSAGE, menu.getName(), quantity);
     }
 }
