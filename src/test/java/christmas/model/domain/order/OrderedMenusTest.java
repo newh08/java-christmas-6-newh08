@@ -30,4 +30,24 @@ public class OrderedMenusTest {
 
     }
 
+    @DisplayName("20개 초과로 주문하면 예외가 발생한다.")
+    @Test
+    void requestOrderTest_2() {
+        RequestOrder requestOrder = new RequestOrder("타파스", 21);
+        List<RequestOrder> requestOrders = List.of(requestOrder);
+        Assertions.assertThatThrownBy(() -> new OrderedMenus(requestOrders))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("음료만 주문하면 예외가 발생한다.")
+    @Test
+    void requestOrderTest_3() {
+        RequestOrder requestOrder1 = new RequestOrder("레드와인", 4);
+        RequestOrder requestOrder2 = new RequestOrder("제로콜라", 2);
+        RequestOrder requestOrder3 = new RequestOrder("샴페인", 2);
+        List<RequestOrder> requestOrders = List.of(requestOrder1, requestOrder2, requestOrder3);
+
+        Assertions.assertThatThrownBy(() -> new OrderedMenus(requestOrders))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }

@@ -122,6 +122,6 @@
 - [x] 주문 메뉴가 중복으로 들어감 - InputView
 - [x] 수량에 숫자가 아닌 다른게 들어감 - InputView
 - [x] 날짜가 아닌 숫자가 들어감 - Date
-- [ ] 메뉴에 없는걸 주문함 - Menu
-- [ ] 총 주문수가 20 초과 - OrderedMenus
-- [ ] 음료만 주문 - OrderedMenus
+- [x] 메뉴에 없는걸 주문함 - Menu
+- [x] 총 주문수가 20 초과 - OrderedMenus
+- [x] 음료만 주문 - OrderedMenus
