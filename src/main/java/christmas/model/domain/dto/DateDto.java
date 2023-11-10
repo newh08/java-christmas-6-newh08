@@ -1,9 +1,12 @@
 package christmas.model.domain.dto;
 
-public class DateDto {
+import christmas.model.domain.date.Date;
+
+public class DateDto extends Date {
     private final int date;
 
     public DateDto(int date) {
+        super(date);
         this.date = date;
     }
 
