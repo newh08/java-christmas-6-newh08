@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class GiftTest {
 
-    @DisplayName("12만원 이상의 Price 로 Gift 생성 후 선물 금액을 확인하면 25000이 나온다.")
+    @DisplayName("12만원 이상의 Price 로 Gift 생성 후 선물 금액을 확인하면 -25000이 나온다.")
     @Test
     void giftTest() {
         Price price = new Price();
@@ -16,7 +16,7 @@ class GiftTest {
         price.updatePrice(requestOrder);
 
         Gift gift = price.makeGiftAccordingOrderPrice();
-        Assertions.assertThat(gift.getGiftPrice()).isEqualTo(25000);
+        Assertions.assertThat(gift.getGiftPrice()).isEqualTo(-25000);
     }
 
 }
