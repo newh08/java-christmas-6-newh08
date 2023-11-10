@@ -5,6 +5,7 @@ import christmas.model.domain.event.discount.Discount;
 import christmas.model.domain.event.discount.DiscountStrategy;
 import christmas.model.domain.order.OrderedMenus;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class TotalDiscount {
     private final List<Discount> discounts;
@@ -24,5 +25,11 @@ public class TotalDiscount {
 
     public int getTotalDiscount() {
         return totalDiscount;
+    }
+
+    public Stream<String> makeMessageStream() {
+        return discounts.stream()
+                .filter(Discount::isNotZero)
+                .map(Discount::toString);
     }
 }
