@@ -1,6 +1,7 @@
 package christmas.model.domain.order;
 
 import christmas.model.domain.menu.MenuCategory;
+import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,12 +10,11 @@ public class OrderedMenusTest {
 
     // 테스트에 사용하기 위해 OrderedMenus 제공
     public static OrderedMenus makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer() {
-        OrderedMenus orderedMenus = new OrderedMenus();
-        orderedMenus.addRequestOrder(new RequestOrder("타파스", 3));
-        orderedMenus.addRequestOrder(new RequestOrder("바비큐립", 2));
-        orderedMenus.addRequestOrder(new RequestOrder("아이스크림", 3));
+        List<RequestOrder> requestOrders = List.of(new RequestOrder("타파스", 3),
+                new RequestOrder("바비큐립", 2),
+                new RequestOrder("아이스크림", 3));
 
-        return orderedMenus;
+        return new OrderedMenus(requestOrders);
     }
 
     @DisplayName("각 카테고리별 주문 수량을 반환한다.")

@@ -2,7 +2,6 @@ package christmas.model.domain.order;
 
 import christmas.model.domain.event.Gift;
 import christmas.model.domain.menu.MenuCategory;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,14 +9,16 @@ public class OrderedMenus {
     private final List<RequestOrder> requestOrders;
     private final Price totalPrice;
 
-    public OrderedMenus() {
-        this.requestOrders = new ArrayList<>();
+    public OrderedMenus(List<RequestOrder> requestOrderList) {
+        this.requestOrders = requestOrderList;
         totalPrice = new Price();
+        updatePrice();
     }
 
-    public void addRequestOrder(RequestOrder requestOrder) {
-        requestOrders.add(requestOrder);
-        totalPrice.updatePrice(requestOrder);
+    private void updatePrice() {
+        for (RequestOrder requestOrder : requestOrders) {
+            totalPrice.updatePrice(requestOrder);
+        }
     }
 
     public Gift makeGift() {
@@ -37,9 +38,5 @@ public class OrderedMenus {
 
     public Price getTotalPrice() {
         return totalPrice;
-    }
-
-    public int getTotalOrderPrice() {
-        return totalPrice.getPrice();
     }
 }
