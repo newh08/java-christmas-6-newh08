@@ -15,7 +15,7 @@ class GiftTest {
         RequestOrder requestOrder = new RequestOrder("바비큐립", 3);
         price.updatePrice(requestOrder);
 
-        Gift gift = new Gift(price);
+        Gift gift = price.makeGiftAccordingOrderPrice();
         Assertions.assertThat(gift.getGiftPrice()).isEqualTo(25000);
     }
 
