@@ -12,7 +12,6 @@
   - [x] 크리스마스 디데이 확인하기
   - [x] 특별 할인 날인지 확인하기
   - [x] 주말인지 확인하기
-  - [x] DTO 생성
 - **특별 할인 날짜 저장 - SpecialDate (Enum)**
   - [x] 특별 할인 날인지 확인하기 
 
@@ -67,7 +66,6 @@
 ### DTO
 - [x] 날짜 정보를 저장해 전달하기 위한 DTO - DateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
-- [x] 날짜 정보를 저장해 view 로 전달하기 위한 DTO - RespondDateDto
 - **주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto**
   - [x] 메뉴 출력 메시지 생성해 반환
   - [x] 주문 금액 반환
