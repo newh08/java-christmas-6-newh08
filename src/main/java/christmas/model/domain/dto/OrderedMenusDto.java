@@ -3,6 +3,7 @@ package christmas.model.domain.dto;
 import christmas.model.domain.order.Price;
 import christmas.model.domain.order.RequestOrder;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OrderedMenusDto {
     private final List<RequestOrder> requestOrders;
@@ -13,11 +14,13 @@ public class OrderedMenusDto {
         this.price = price;
     }
 
-    public List<RequestOrder> getRequestOrders() {
-        return requestOrders;
+    public String getOrdersMessage() {
+        return requestOrders.stream()
+                .map(RequestOrder::toString)
+                .collect(Collectors.joining("\n"));
     }
 
-    public Price getPrice() {
-        return price;
+    public int getTotalPrice() {
+        return price.getPrice();
     }
 }

@@ -66,6 +66,8 @@
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
 - [x] 날짜 정보를 저장해 view 로 전달하기 위한 DTO - RespondDateDto
 - [x] 주문 메뉴를 저장해 전달하기 위한 DTO - OrderedMenusDto
+  - [x] 메뉴 출력 메시지 생성해 반환
+  - [x] 주문 금액 반환
 - [x] 혜택 결과를 저장해 전달하기 위한 DTO - EventResultsDto
 
 ### Util
