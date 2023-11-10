@@ -1,8 +1,9 @@
 package christmas.model.util;
 
+import christmas.model.domain.date.Date;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
-import christmas.model.domain.dto.RequestDateDto;
+import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.RequestOrderDto;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
@@ -18,8 +19,8 @@ public class Converter {
         return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalPrice());
     }
 
-    public static RequestDateDto from(final int inputDate) {
-        return new RequestDateDto(inputDate);
+    public static DateDto from(final int inputDate) {
+        return new DateDto(inputDate);
     }
 
     public static RequestOrderDto from(Entry<String, Integer> input) {
