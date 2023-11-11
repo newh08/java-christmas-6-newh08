@@ -26,14 +26,14 @@ public class Gift {
         return 0;
     }
 
-    public String getGiftMessage() {
+    public String makeGiftMessage() {
         if (gift) {
             return GIFT_TRUE_MESSAGE;
         }
         return GIFT_FALSE_MESSAGE;
     }
 
-    public Stream<String> getGiftBenefitMessage() {
+    public Stream<String> makeGiftBenefitMessage() {
         if (gift) {
             return Stream.of(String.format(GIFT_BENEFIT_MESSAGE, GIFT_PRICE));
         }

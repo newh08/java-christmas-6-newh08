@@ -33,16 +33,16 @@ public class EventBenefits {
 
     public String makeBenefitMessage() {
         Stream<String> discountBenefitMessage = totalDiscount.makeMessageStream();
-        Stream<String> giftBenefitMessage = gift.getGiftBenefitMessage();
+        Stream<String> giftBenefitMessage = gift.makeGiftBenefitMessage();
         return Stream.concat(discountBenefitMessage, giftBenefitMessage)
                 .collect(Collectors.joining("\n"));
     }
 
-    public int getTotalDiscount() {
-        return totalDiscount.getTotalDiscount();
+    public String getGiftMessage() {
+        return gift.makeGiftMessage();
     }
 
-    public String getGiftMessage() {
-        return gift.getGiftMessage();
+    public int getTotalDiscount() {
+        return totalDiscount.getTotalDiscount();
     }
 }
