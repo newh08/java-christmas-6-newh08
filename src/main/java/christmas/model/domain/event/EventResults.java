@@ -1,8 +1,9 @@
 package christmas.model.domain.event;
 
+import static christmas.model.domain.event.EventBenefits.makeInitialConditionEventBenefits;
+
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.Gift;
-import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.OrderedMenus;
 
 public class EventResults {
@@ -10,10 +11,14 @@ public class EventResults {
     private int totalBenefitAmount;
     private Badge badge;
 
-    public EventResults() {
-        eventBenefits = new EventBenefits(new TotalDiscount(), new Gift(0));
-        totalBenefitAmount = 0;
-        badge = Badge.NONE;
+    public EventResults(EventBenefits eventBenefits, int totalBenefitAmount, Badge badge) {
+        this.eventBenefits = eventBenefits;
+        this.totalBenefitAmount = totalBenefitAmount;
+        this.badge = badge;
+    }
+
+    public static EventResults makeInitialConditionEventResults() {
+        return new EventResults(makeInitialConditionEventBenefits(), 0, Badge.NONE);
     }
 
     public void updateEventResult(OrderedMenus orderedMenus, Date date) {

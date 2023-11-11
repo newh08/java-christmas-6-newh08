@@ -27,7 +27,7 @@ public class ChristmasEventService {
     }
 
     public EventResultsDto makeEventResults(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
-        EventResults eventResults = new EventResults();
+        EventResults eventResults = EventResults.makeInitialConditionEventResults();
         if (checkTotalOrderPriceOverMinimumEventPrice(orderedMenusDto)) {
             executeEvent(orderedMenusDto, dateDto, eventResults);
         }

@@ -11,9 +11,13 @@ public class TotalDiscount {
     private final List<Discount> discounts;
     private int totalDiscount;
 
-    public TotalDiscount() {
+    public TotalDiscount(int totalDiscount) {
         discounts = DiscountStrategy.getAllDiscountStrategy();
-        this.totalDiscount = 0;
+        this.totalDiscount = totalDiscount;
+    }
+
+    public static TotalDiscount makeInitialConditionTotalDiscount() {
+        return new TotalDiscount(0);
     }
 
     public void applyDiscount(OrderedMenus orderedMenus, Date date) {

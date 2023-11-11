@@ -1,5 +1,6 @@
 package christmas.model.domain.event;
 
+import static christmas.model.domain.event.benefit.TotalDiscount.makeInitialConditionTotalDiscount;
 import static christmas.model.domain.order.OrderedMenusTest.makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,7 +18,7 @@ class TotalDiscountTest {
         Date date = new Date(23);
         OrderedMenus orderedMenus = makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
 
-        TotalDiscount totalDiscount = new TotalDiscount();
+        TotalDiscount totalDiscount = makeInitialConditionTotalDiscount();
         totalDiscount.applyDiscount(orderedMenus, date);
         assertThat(totalDiscount.getTotalDiscount()).isEqualTo(-7246);
     }

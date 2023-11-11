@@ -15,6 +15,10 @@ public class Gift {
         this.gift = totalPrice >= MINIMUM_GIFT_PRICE;
     }
 
+    public static Gift makeInitialConditionGift() {
+        return new Gift(0);
+    }
+
     public int getGiftPrice() {
         if (gift) {
             return GIFT_PRICE;

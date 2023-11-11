@@ -1,5 +1,8 @@
 package christmas.model.domain.event;
 
+import static christmas.model.domain.event.benefit.Gift.makeInitialConditionGift;
+import static christmas.model.domain.event.benefit.TotalDiscount.makeInitialConditionTotalDiscount;
+
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.event.benefit.TotalDiscount;
@@ -14,6 +17,10 @@ public class EventBenefits {
     public EventBenefits(TotalDiscount totalDiscount, Gift gift) {
         this.totalDiscount = totalDiscount;
         this.gift = gift;
+    }
+
+    public static EventBenefits makeInitialConditionEventBenefits() {
+        return new EventBenefits(makeInitialConditionTotalDiscount(), makeInitialConditionGift());
     }
 
     public void applyDiscount(OrderedMenus orderedMenus, Date date) {
