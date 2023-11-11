@@ -23,7 +23,7 @@ public class ChristmasEventController {
         this.outputView = outputView;
     }
 
-    public void start() {
+    public void startEvent() {
         DateDto dateDto = repeat(this::makeDateDto);
 
         OrderedMenusDto orderedMenusDto = repeat(this::makeOrderMenusDto);
