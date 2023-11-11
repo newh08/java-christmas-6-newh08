@@ -4,7 +4,9 @@ import static christmas.model.domain.menu.MenuCategory.DESSERT;
 import static christmas.model.domain.menu.MenuCategory.MAIN;
 import static christmas.model.domain.menu.MenuCategory.APPETIZER;
 import static christmas.model.domain.menu.MenuCategory.BEVERAGE;
+import static christmas.model.util.ErrorMessage.INVALID_ORDER_MESSAGE;
 
+import christmas.model.util.MyIllegalArgumentException;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -36,7 +38,7 @@ public enum Menu {
         return Arrays.stream(values())
                 .filter(menu -> menu.checkName(menuName))
                 .findAny()
-                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요."));
+                .orElseThrow(() -> new MyIllegalArgumentException(INVALID_ORDER_MESSAGE));
     }
 
     public boolean checkName(String name) {

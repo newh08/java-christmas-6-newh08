@@ -1,5 +1,9 @@
 package christmas.model.domain.date;
 
+import static christmas.model.util.ErrorMessage.INVALID_DATE_MESSAGE;
+
+import christmas.model.util.MyIllegalArgumentException;
+
 public class Date {
     private static final int CHRISTMAS_DATE = 25;
     private static final int WEEK = 7;
@@ -7,7 +11,6 @@ public class Date {
     private static final int FIRST_SATURDAY = 2;
     private static final int FIRST_DAY = 1;
     private static final int LAST_DAY = 31;
-    private static final String INVALID_DATE_MESSAGE = "유효하지 않은 날짜입니다. 다시 입력해 주세요.";
 
     private final int date;
 
@@ -18,7 +21,7 @@ public class Date {
 
     private void validateDate(int date) {
         if (FIRST_DAY > date || date > LAST_DAY) {
-            throw new IllegalArgumentException(INVALID_DATE_MESSAGE);
+            throw new MyIllegalArgumentException(INVALID_DATE_MESSAGE);
         }
     }
 

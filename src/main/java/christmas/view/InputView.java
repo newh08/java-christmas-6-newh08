@@ -1,6 +1,10 @@
 package christmas.view;
 
+import static christmas.model.util.ErrorMessage.INVALID_DATE_MESSAGE;
+import static christmas.model.util.ErrorMessage.INVALID_ORDER_MESSAGE;
+
 import camp.nextstep.edu.missionutils.Console;
+import christmas.model.util.MyIllegalArgumentException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -11,20 +15,18 @@ public class InputView {
     private static final String REGEX_OF_ORDER = "^([가-힣| ]+-[1-9| ]+[0-9| ]?,?)*";
     private static final String DELIMITER_QUANTITY = "-";
     private static final String DELIMITER_MENU = ",";
-    private static final String INVALID_DATE_MESSAGE = "유효하지 않은 날짜입니다. 다시 입력해 주세요.";
-    private static final String INVALID_ORDER_MESSAGE = "유효하지 않은 주문입니다. 다시 입력해 주세요.";
 
-    public int readDate() {
+    public int readDate() throws MyIllegalArgumentException {
         System.out.println(INPUT_DATE_MESSAGE);
         String input = Console.readLine();
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(INVALID_DATE_MESSAGE);
+            throw new MyIllegalArgumentException(INVALID_DATE_MESSAGE);
         }
     }
 
-    public Map<String, Integer> readOrders() {
+    public Map<String, Integer> readOrders() throws MyIllegalArgumentException {
         System.out.println(INPUT_ORDER_MESSAGE);
         String inputString = Console.readLine();
         validateInputByRegex(inputString);
@@ -34,15 +36,15 @@ public class InputView {
             collectInputOrder(map, inputOrders);
             return map;
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(INVALID_ORDER_MESSAGE);
+            throw new MyIllegalArgumentException(INVALID_ORDER_MESSAGE);
         }
     }
 
-    private void validateInputByRegex(String input) {
+    private void validateInputByRegex(String input) throws MyIllegalArgumentException {
         if (Pattern.matches(REGEX_OF_ORDER, input)) {
             return;
         }
-        throw new IllegalArgumentException(INVALID_ORDER_MESSAGE);
+        throw new MyIllegalArgumentException(INVALID_ORDER_MESSAGE);
     }
 
     private static void collectInputOrder(Map<String, Integer> map, String[] inputOrders) {
@@ -55,9 +57,10 @@ public class InputView {
         }
     }
 
-    private static void validateMenuDuplication(Map<String, Integer> map, String menu) {
+    private static void validateMenuDuplication(Map<String, Integer> map, String menu)
+            throws MyIllegalArgumentException {
         if (map.containsKey(menu)) {
-            throw new IllegalArgumentException(INVALID_ORDER_MESSAGE);
+            throw new MyIllegalArgumentException(INVALID_ORDER_MESSAGE);
         }
     }
 }

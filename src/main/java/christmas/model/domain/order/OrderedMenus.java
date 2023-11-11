@@ -1,14 +1,16 @@
 package christmas.model.domain.order;
 
+import static christmas.model.util.ErrorMessage.OVER_MAX_MENU_MESSAGE;
+import static christmas.model.util.ErrorMessage.WRONG_ORDER_ONLY_BEVERAGE;
+
 import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.menu.MenuCategory;
+import christmas.model.util.MyIllegalArgumentException;
 import java.util.Collections;
 import java.util.List;
 
 public class OrderedMenus {
     private static final int MAX_NUMBER_OF_MENU = 20;
-    private static final String OVER_MAX_MENU_MESSAGE = "메뉴는 한 번에 최대 20개까지만 주문할 수 있습니다. 다시 입력해 주세요.";
-    private static final String WRONG_ORDER_ONLY_BEVERAGE = "음료만 주문 시, 주문할 수 없습니다. 다시 입력해 주세요.";
 
     private final List<RequestOrder> requestOrders;
     private final TotalOrderPrice totalOrderPrice;
@@ -30,7 +32,7 @@ public class OrderedMenus {
                 .mapToInt(RequestOrder::getQuantity)
                 .sum();
         if (totalMenuQuantity > MAX_NUMBER_OF_MENU) {
-            throw new IllegalArgumentException(OVER_MAX_MENU_MESSAGE);
+            throw new MyIllegalArgumentException(OVER_MAX_MENU_MESSAGE);
         }
     }
 
@@ -38,7 +40,7 @@ public class OrderedMenus {
         boolean isAllBeverage = requestOrders.stream()
                 .allMatch(requestOrder -> requestOrder.checkCatalog(MenuCategory.BEVERAGE));
         if (isAllBeverage) {
-            throw new IllegalArgumentException(WRONG_ORDER_ONLY_BEVERAGE);
+            throw new MyIllegalArgumentException(WRONG_ORDER_ONLY_BEVERAGE);
         }
     }
 
