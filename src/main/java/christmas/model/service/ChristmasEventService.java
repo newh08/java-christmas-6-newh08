@@ -28,12 +28,24 @@ public class ChristmasEventService {
 
     public EventResultsDto makeEventResults(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
         EventResults eventResults = new EventResults();
-        if (orderedMenusDto.getTotalOrderPrice() >= MINIMUM_EVENT_PRICE) {
-            OrderedMenus orderedMenus = Converter.from(orderedMenusDto);
-            Date date = Converter.from(dateDto);
-            eventResults.updateEventResult(orderedMenus, date);
+        if (checkTotalOrderPriceOverMinimumEventPrice(orderedMenusDto)) {
+            executeEvent(orderedMenusDto, dateDto, eventResults);
         }
         saveEventResult(eventResults);
         return Converter.from(eventResults);
+    }
+
+    private static boolean checkTotalOrderPriceOverMinimumEventPrice(OrderedMenusDto orderedMenusDto) {
+        return orderedMenusDto.getTotalOrderPrice() >= MINIMUM_EVENT_PRICE;
+    }
+
+    private void executeEvent(OrderedMenusDto orderedMenusDto, DateDto dateDto, EventResults eventResults) {
+        OrderedMenus orderedMenus = Converter.from(orderedMenusDto);
+        Date date = Converter.from(dateDto);
+        eventResults.updateEventResult(orderedMenus, date);
+    }
+
+    private void saveEventResult(EventResults eventResults) {
+        EventRepository.getEventRepository().save(eventResults);
     }
 }
