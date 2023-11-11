@@ -19,13 +19,17 @@ public class EventResults {
     public void updateEventResult(OrderedMenus orderedMenus, Date date) {
         eventBenefits.applyDiscount(orderedMenus, date);
         Gift gift = orderedMenus.makeGift();
-        updateTotalBenefitAmount(gift);
         eventBenefits.updateGift(gift);
-        badge = Badge.getBadge(Math.abs(totalBenefitAmount));
+        updateTotalBenefitAmount(gift);
+        updateBadge();
     }
 
     private void updateTotalBenefitAmount(Gift gift) {
         totalBenefitAmount = eventBenefits.getTotalDiscount() + gift.getGiftPrice();
+    }
+
+    private void updateBadge() {
+        badge = Badge.getBadge(Math.abs(totalBenefitAmount));
     }
 
     public EventBenefits getEventBenefit() {
