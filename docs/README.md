@@ -68,8 +68,10 @@
   - [x] 출력 메시지 위해 배지 이름 추가 및 toString 오버라이딩
   - [x] 할인 금액을 통해 배지 등급 결정하기
 - ##### 모든 혜택 저장 및 업데이트 하기 - EventResults
-  - [x] 혜택 업데이트 하기 - EventResults
-  - [ ] 혜택 정보 저장소에 저장하기 - EventResults
+  - [x] 혜택 업데이트 하기
+- ##### 혜택 결과를 저장하기위한 싱글턴 저장소 - EventRepository
+  - [x] 싱글턴 구현 
+  - [x] 혜택 결과 저장하기
 ### DTO
 - [x] 날짜 정보를 저장해 전달하기 위한 DTO - DateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
@@ -93,6 +95,7 @@
 - [x] 요청 주문 정보 사용해 주문한 메뉴들의 DTO 생성하기 - ChristmasEventService
 - [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기 - ChristmasEventService
   - [x] 총 주문 금액이 최소금액보다 작으면 이벤트 실행 X - ChristmasEventService
+- [ ] 혜택 결과 저장소에 저장하기 
 
 # Controller
 - [x] 날짜 정보를 converter 통해 Dto 생성 - ChristmasEventController
