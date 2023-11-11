@@ -29,12 +29,12 @@ class DateTest {
     @DisplayName("날짜가 아닌 32 로 Date 를 생성시 예외가 발생한다.")
     @Test
     void dateTest_3() {
-        assertThatThrownBy(() -> new Date(32)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Date(32)).hasMessageContaining("[ERROR]");
     }
 
     @DisplayName("날짜가 아닌 0으로 Date 를 생성시 예외가 발생한다.")
     @Test
     void dateTest_4() {
-        assertThatThrownBy(() -> new Date(0)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Date(0)).hasMessageContaining("[ERROR]");
     }
 }

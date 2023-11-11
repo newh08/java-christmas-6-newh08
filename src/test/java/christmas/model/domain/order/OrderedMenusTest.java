@@ -36,7 +36,7 @@ public class OrderedMenusTest {
         RequestOrder requestOrder = new RequestOrder("타파스", 21);
         List<RequestOrder> requestOrders = List.of(requestOrder);
         Assertions.assertThatThrownBy(() -> new OrderedMenus(requestOrders))
-                .isInstanceOf(IllegalArgumentException.class);
+                .hasMessageContaining("[ERROR]");
     }
 
     @DisplayName("음료만 주문하면 예외가 발생한다.")
@@ -48,6 +48,6 @@ public class OrderedMenusTest {
         List<RequestOrder> requestOrders = List.of(requestOrder1, requestOrder2, requestOrder3);
 
         Assertions.assertThatThrownBy(() -> new OrderedMenus(requestOrders))
-                .isInstanceOf(IllegalArgumentException.class);
+                .hasMessageContaining("[ERROR]");
     }
 }

@@ -11,7 +11,7 @@ class MenuTest {
     void ManuListTest() {
         Menu menu = Menu.getMenuByName("양송이수프");
         Assertions.assertThat(menu).isEqualTo(Menu.MUSHROOM_SOUP);
-        Assertions.assertThatThrownBy(() -> Menu.getMenuByName("양송이")).isInstanceOf(IllegalArgumentException.class);
+        Assertions.assertThatThrownBy(() -> Menu.getMenuByName("양송이")).hasMessageContaining("[ERROR]");
     }
 
 }
