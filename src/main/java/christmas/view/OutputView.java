@@ -15,7 +15,6 @@ public class OutputView {
     private static final String DECEMBER_BADGE = "\n<12월 이벤트 배지>";
     private static final String FORMAT_OF_PRICE = "%,d원\n";
     private static final String EMPTY = "없음";
-    private static final String ERROR_SUFFIX = "[ERROR] ";
 
     public void printStartOfBenefitInfo(DateDto dateDto) {
         System.out.printf(RESULT_PRINT_OPENING_MESSAGE, dateDto.getDate());
@@ -73,6 +72,6 @@ public class OutputView {
     }
 
     public void printError(IllegalArgumentException e) {
-        System.out.println(ERROR_SUFFIX + e.getMessage());
+        System.out.println(e.getMessage());
     }
 }
