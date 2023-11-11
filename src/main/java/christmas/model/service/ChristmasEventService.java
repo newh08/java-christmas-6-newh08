@@ -5,6 +5,7 @@ import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.dto.RequestOrderDto;
+import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
@@ -32,6 +33,7 @@ public class ChristmasEventService {
             Date date = Converter.from(dateDto);
             eventResults.updateEventResult(orderedMenus, date);
         }
+        saveEventResult(eventResults);
         return Converter.from(eventResults);
     }
 }
