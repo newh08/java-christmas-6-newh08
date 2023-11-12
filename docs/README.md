@@ -90,11 +90,12 @@
   - [x] 주문 입력값을 주문 정보 데이터 Dto 로 변환하기
   - [x] 주문 메뉴의 DTO 를 주문 메뉴 객체로 변환하기
  
-### Service
-- [x] 요청 주문 Dto 를 통해 주문 정보 객체 생성하기 - ChristmasEventService
-- [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기 - ChristmasEventService
-  - [x] 총 주문 금액이 최소금액보다 작으면 이벤트 실행 X - ChristmasEventService
-- [ ] 혜택 결과 저장소에 저장하기 
+### Service - ChristmasEventService
+- [x] 날짜 입력값을 통해 날짜 Dto 생성하기 
+- [x] 요청 주문 Dto 를 통해 주문 정보 객체 생성하기
+- [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기
+  - [x] 총 주문 금액이 최소금액보다 작으면 이벤트 실행 X
+- [x] 혜택 결과 저장소에 저장하기 
 
 # Controller
 - [x] 날짜 정보를 converter 통해 Dto 생성 - ChristmasEventController

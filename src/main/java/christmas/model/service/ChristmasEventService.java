@@ -22,6 +22,9 @@ public class ChristmasEventService {
         this.converter = converter;
     }
 
+    public DateDto makeDateDto(int userInputDate) {
+        return converter.from(userInputDate);
+    }
 
     public OrderedMenusDto makeOrderedMenusDto(Map<String, Integer> inputOrders) {
         List<RequestOrder> requestOrders = inputOrders.entrySet().stream()
