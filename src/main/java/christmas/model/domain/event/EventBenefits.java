@@ -32,8 +32,8 @@ public class EventBenefits {
     }
 
     public String makeBenefitMessage() {
-        Stream<String> discountBenefitMessage = totalDiscount.makeMessageStream();
-        Stream<String> giftBenefitMessage = gift.makeGiftBenefitMessage();
+        Stream<String> discountBenefitMessage = totalDiscount.makeDiscountBenefitMessageStream();
+        Stream<String> giftBenefitMessage = gift.makeGiftBenefitMessageStream();
         return Stream.concat(discountBenefitMessage, giftBenefitMessage)
                 .collect(Collectors.joining("\n"));
     }
