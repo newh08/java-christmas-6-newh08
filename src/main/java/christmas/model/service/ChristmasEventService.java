@@ -4,21 +4,22 @@ import christmas.model.domain.date.Date;
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
-import christmas.model.domain.dto.RequestOrderDto;
 import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import christmas.model.util.Converter;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ChristmasEventService {
     private static final int MINIMUM_EVENT_PRICE = 10000;
 
-    public RequestOrder makeRequestOrder(RequestOrderDto requestOrderDto) {
-        String menuName = requestOrderDto.getMenuName();
-        int quantity = requestOrderDto.getQuantity();
-        return new RequestOrder(menuName, quantity);
+    private final Converter converter;
+
+    public ChristmasEventService(Converter converter) {
+        this.converter = converter;
     }
 
     public OrderedMenusDto makeOrderMenusDto(List<RequestOrder> requestOrderList) {
@@ -26,13 +27,13 @@ public class ChristmasEventService {
         return Converter.from(orderedMenus);
     }
 
-    public EventResultsDto makeEventResults(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
+    public EventResultsDto makeEventResultsDto(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
         EventResults eventResults = EventResults.makeInitialConditionEventResults();
         if (checkTotalOrderPriceOverMinimumEventPrice(orderedMenusDto)) {
             executeEvent(orderedMenusDto, dateDto, eventResults);
         }
         saveEventResult(eventResults);
-        return Converter.from(eventResults);
+        return converter.from(eventResults);
     }
 
     private static boolean checkTotalOrderPriceOverMinimumEventPrice(OrderedMenusDto orderedMenusDto) {
@@ -40,8 +41,8 @@ public class ChristmasEventService {
     }
 
     private void executeEvent(OrderedMenusDto orderedMenusDto, DateDto dateDto, EventResults eventResults) {
-        OrderedMenus orderedMenus = Converter.from(orderedMenusDto);
-        Date date = Converter.from(dateDto);
+        OrderedMenus orderedMenus = converter.from(orderedMenusDto);
+        Date date = converter.from(dateDto);
         eventResults.updateEventResult(orderedMenus, date);
     }
 
