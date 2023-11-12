@@ -31,7 +31,7 @@ public class TotalDiscount {
         return totalDiscount;
     }
 
-    public Stream<String> makeMessageStream() {
+    public Stream<String> makeDiscountBenefitMessageStream() {
         return discounts.stream()
                 .filter(Discount::isNotZero)
                 .map(Discount::toString);
