@@ -22,9 +22,13 @@ public class ChristmasEventService {
         this.converter = converter;
     }
 
-    public OrderedMenusDto makeOrderMenusDto(List<RequestOrder> requestOrderList) {
-        OrderedMenus orderedMenus = new OrderedMenus(requestOrderList);
-        return Converter.from(orderedMenus);
+
+    public OrderedMenusDto makeOrderedMenusDto(Map<String, Integer> inputOrders) {
+        List<RequestOrder> requestOrders = inputOrders.entrySet().stream()
+                                                        .map(converter::from)
+                                                        .collect(Collectors.toList());
+        OrderedMenus orderedMenus = new OrderedMenus(requestOrders);
+        return converter.from(orderedMenus);
     }
 
     public EventResultsDto makeEventResultsDto(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
