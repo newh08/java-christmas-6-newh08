@@ -33,7 +33,7 @@ public class Gift {
         return GIFT_FALSE_MESSAGE;
     }
 
-    public Stream<String> makeGiftBenefitMessage() {
+    public Stream<String> makeGiftBenefitMessageStream() {
         if (gift) {
             return Stream.of(String.format(GIFT_BENEFIT_MESSAGE, GIFT_PRICE));
         }
