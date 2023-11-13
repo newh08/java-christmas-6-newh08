@@ -17,7 +17,7 @@ class GiftTest {
         totalOrderPrice.updateTotalOrderPrice(requestOrder);
 
         Gift gift = totalOrderPrice.makeGiftPerTotalOrderPrice();
-        Assertions.assertThat(gift.getGiftPrice()).isEqualTo(-25000);
+        Assertions.assertThat(gift.getGiftBenefit()).isEqualTo(-25000);
     }
 
 }

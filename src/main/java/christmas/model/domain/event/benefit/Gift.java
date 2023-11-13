@@ -19,7 +19,7 @@ public class Gift {
         return new Gift(0);
     }
 
-    public int getGiftPrice() {
+    public int getGiftBenefit() {
         if (gift) {
             return GIFT_PRICE;
         }

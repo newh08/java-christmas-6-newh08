@@ -30,7 +30,7 @@ public class EventResults {
     }
 
     private void updateTotalBenefitAmount(Gift gift) {
-        totalBenefitAmount = eventBenefits.getDiscountBenefit() + gift.getGiftPrice();
+        totalBenefitAmount = eventBenefits.getDiscountBenefit() + gift.getGiftBenefit();
     }
 
     private void updateBadge() {
