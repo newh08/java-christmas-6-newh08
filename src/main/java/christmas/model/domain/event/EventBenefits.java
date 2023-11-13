@@ -42,7 +42,7 @@ public class EventBenefits {
         return gift.makeGiftMessage();
     }
 
-    public int getTotalDiscount() {
+    public int getDiscountBenefit() {
         return totalDiscount.getTotalDiscount();
     }
 }

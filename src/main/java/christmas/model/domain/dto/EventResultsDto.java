@@ -15,7 +15,7 @@ public class EventResultsDto {
     }
 
     public int getTotalDiscount() {
-        return eventBenefits.getTotalDiscount();
+        return eventBenefits.getDiscountBenefit();
     }
 
     public int getTotalBenefitAmount() {
