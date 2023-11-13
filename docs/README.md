@@ -65,9 +65,8 @@
   - [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount
   - [x] 각 Discount 의 금액이 0원이 아닌지 확인하는 기능 구현
   - [x] 각 Discount 를 리셋하기
-- [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy  
-- ##### 총 할인 금액 저장 - DiscountBenefit
-- [x] 총 할인금액 저장 및 반환하기
+- [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy
+- 
 - ### Event 결과 관련
 - ##### 배지 정보 저장 - Badge
   - [x] 출력 메시지 위해 배지 이름 추가 및 toString 오버라이딩
@@ -77,6 +76,7 @@
 - ##### 혜택 결과를 저장하기위한 싱글턴 저장소 - EventRepository
   - [x] 싱글턴 구현 
   - [x] 혜택 결과 저장하기
+
 ### DTO
 - [x] 날짜 정보를 저장해 전달하기 위한 DTO - DateDto
 - [x] 주문 정보를 저장해 전달하기 위한 DTO - RequestOrdersDto
