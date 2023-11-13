@@ -8,6 +8,7 @@ import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
+import christmas.model.domain.order.RequestOrders;
 import christmas.model.util.Converter;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +31,10 @@ public class ChristmasEventService {
     }
 
     public OrderedMenusDto makeOrderedMenusDto(Map<String, Integer> inputOrders) {
-        List<RequestOrder> requestOrders = inputOrders.entrySet().stream()
+        List<RequestOrder> convertedRequestOrders = inputOrders.entrySet().stream()
                                                         .map(converter::from)
                                                         .collect(Collectors.toList());
+        RequestOrders requestOrders = new RequestOrders(convertedRequestOrders);
         OrderedMenus orderedMenus = new OrderedMenus(requestOrders);
         return converter.from(orderedMenus);
     }
