@@ -5,7 +5,6 @@ import static christmas.model.domain.order.OrderedMenusTest.makeOrderedMenusWith
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
-import christmas.model.domain.event.benefit.DiscountBenefit;
 import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.OrderedMenus;
 import org.junit.jupiter.api.DisplayName;
@@ -20,8 +19,8 @@ class TotalDiscountTest {
         OrderedMenus orderedMenus = makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
 
         TotalDiscount totalDiscount = makeInitialConditionTotalDiscount();
-        DiscountBenefit discountBenefit = totalDiscount.applyDiscount(orderedMenus, date);
-        assertThat(discountBenefit.getDiscountBenefit()).isEqualTo(-7246);
+        totalDiscount.applyDiscount(orderedMenus, date);
+        assertThat(totalDiscount.calculateDiscountBenefit()).isEqualTo(-7246);
     }
 
 }
