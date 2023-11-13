@@ -21,8 +21,7 @@ public class Converter {
     }
 
     public EventResultsDto from(final EventResults eventResults) {
-        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getTotalBenefitAmount(),
-                eventResults.getBadge());
+        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getBadge());
     }
 
     public OrderedMenusDto from(final OrderedMenus orderedMenus) {
