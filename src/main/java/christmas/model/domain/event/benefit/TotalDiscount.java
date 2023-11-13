@@ -9,26 +9,21 @@ import java.util.stream.Stream;
 
 public class TotalDiscount {
     private final List<Discount> discounts;
-    private int totalDiscount;
 
-    public TotalDiscount(int totalDiscount) {
+    public TotalDiscount() {
         discounts = DiscountStrategy.getAllDiscountStrategy();
-        this.totalDiscount = totalDiscount;
     }
 
     public static TotalDiscount makeInitialConditionTotalDiscount() {
-        return new TotalDiscount(0);
+        return new TotalDiscount();
     }
 
-    public void applyDiscount(OrderedMenus orderedMenus, Date date) {
-        discounts.stream()
+    public DiscountBenefit applyDiscount(OrderedMenus orderedMenus, Date date) {
+        int discountBenefit = discounts.stream()
                 .peek(discount -> discount.calculateDiscountAmount(orderedMenus, date))
-                .map(Discount::getDiscountAmount)
-                .forEach(discountAmount -> totalDiscount += discountAmount);
-    }
-
-    public int getTotalDiscount() {
-        return totalDiscount;
+                .mapToInt(Discount::getDiscountAmount)
+                .sum();
+        return new DiscountBenefit(discountBenefit);
     }
 
     public Stream<String> makeDiscountBenefitMessageStream() {
