@@ -45,4 +45,9 @@ public class EventBenefits {
     public int getDiscountBenefit() {
         return totalDiscount.calculateDiscountBenefit();
     }
+
+    public int getTotalBenefit() {
+        return totalDiscount.calculateDiscountBenefit() + gift.getGiftBenefit();
+    }
+
 }
