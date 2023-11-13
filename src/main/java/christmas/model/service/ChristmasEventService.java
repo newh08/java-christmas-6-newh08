@@ -17,9 +17,12 @@ public class ChristmasEventService {
     private static final int MINIMUM_EVENT_PRICE = 10000;
 
     private final Converter converter;
+    private final EventRepository eventRepository;
+    private long runtimeUserId;
 
     public ChristmasEventService(Converter converter) {
         this.converter = converter;
+        this.eventRepository = EventRepository.getEventRepository();
     }
 
     public DateDto makeDateDto(int userInputDate) {
@@ -39,7 +42,7 @@ public class ChristmasEventService {
         if (checkTotalOrderPriceOverMinimumEventPrice(orderedMenusDto)) {
             executeEvent(orderedMenusDto, dateDto, eventResults);
         }
-        saveEventResult(eventResults);
+        runtimeUserId = eventRepository.save(eventResults);
         return converter.from(eventResults);
     }
 
@@ -51,9 +54,5 @@ public class ChristmasEventService {
         OrderedMenus orderedMenus = converter.from(orderedMenusDto);
         Date date = converter.from(dateDto);
         eventResults.updateEventResult(orderedMenus, date);
-    }
-
-    private void saveEventResult(EventResults eventResults) {
-        EventRepository.getEventRepository().save(eventResults);
     }
 }
