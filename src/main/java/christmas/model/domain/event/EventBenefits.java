@@ -4,6 +4,7 @@ import static christmas.model.domain.event.benefit.Gift.makeInitialConditionGift
 import static christmas.model.domain.event.benefit.TotalDiscount.makeInitialConditionTotalDiscount;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.DiscountBenefit;
 import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.OrderedMenus;
@@ -13,18 +14,20 @@ import java.util.stream.Stream;
 public class EventBenefits {
     private final TotalDiscount totalDiscount;
     private Gift gift;
+    private DiscountBenefit discountBenefit;
 
-    public EventBenefits(TotalDiscount totalDiscount, Gift gift) {
+    public EventBenefits(TotalDiscount totalDiscount, Gift gift, DiscountBenefit discountBenefit) {
         this.totalDiscount = totalDiscount;
         this.gift = gift;
+        this.discountBenefit = discountBenefit;
     }
 
     public static EventBenefits makeInitialConditionEventBenefits() {
-        return new EventBenefits(makeInitialConditionTotalDiscount(), makeInitialConditionGift());
+        return new EventBenefits(makeInitialConditionTotalDiscount(), makeInitialConditionGift(), new DiscountBenefit(0));
     }
 
     public void applyDiscount(OrderedMenus orderedMenus, Date date) {
-        totalDiscount.applyDiscount(orderedMenus, date);
+        this.discountBenefit = totalDiscount.applyDiscount(orderedMenus, date);
     }
 
     public void updateGift(Gift gift) {
@@ -43,6 +46,6 @@ public class EventBenefits {
     }
 
     public int getDiscountBenefit() {
-        return totalDiscount.getTotalDiscount();
+        return discountBenefit.getDiscountBenefit();
     }
 }
