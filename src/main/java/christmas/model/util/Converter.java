@@ -10,15 +10,6 @@ import christmas.model.domain.order.RequestOrder;
 import java.util.Map.Entry;
 
 public class Converter {
-    public EventResultsDto from(final EventResults eventResults) {
-        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getTotalBenefitAmount(),
-                eventResults.getBadge());
-    }
-
-    public OrderedMenusDto from(final OrderedMenus orderedMenus) {
-        return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalOrderPrice());
-    }
-
     public DateDto from(final int inputDate) {
         return new DateDto(inputDate);
     }
@@ -29,11 +20,20 @@ public class Converter {
         return new RequestOrder(inputMenu, inputQuantity);
     }
 
-    public OrderedMenus from(OrderedMenusDto orderedMenusDto) {
-        return new OrderedMenus(orderedMenusDto.getRequestOrders());
+    public EventResultsDto from(final EventResults eventResults) {
+        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getTotalBenefitAmount(),
+                eventResults.getBadge());
+    }
+
+    public OrderedMenusDto from(final OrderedMenus orderedMenus) {
+        return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalOrderPrice());
     }
 
     public Date from(DateDto dateDto) {
         return new Date(dateDto.getDate());
+    }
+
+    public OrderedMenus from(OrderedMenusDto orderedMenusDto) {
+        return new OrderedMenus(orderedMenusDto.getRequestOrders());
     }
 }
