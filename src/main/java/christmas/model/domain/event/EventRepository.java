@@ -22,9 +22,14 @@ public class EventRepository {
         return instance;
     }
 
-    public void save(EventResults eventResults) {
+    public long save(EventResults eventResults) {
         long currentId = id++;
         eventRepository.put(currentId, eventResults);
         badgeRepository.put(currentId, eventResults.getBadge());
+        return id;
+    }
+
+    public EventResults getEventResultsById(long id) {
+        return eventRepository.get(id);
     }
 }
