@@ -5,12 +5,10 @@ import christmas.model.domain.event.EventBenefits;
 
 public class EventResultsDto {
     private final EventBenefits eventBenefits;
-    private final int totalBenefitAmount;
     private final Badge badge;
 
-    public EventResultsDto(EventBenefits eventBenefits, int totalBenefitAmount, Badge badge) {
+    public EventResultsDto(EventBenefits eventBenefits, Badge badge) {
         this.eventBenefits = eventBenefits;
-        this.totalBenefitAmount = totalBenefitAmount;
         this.badge = badge;
     }
 
@@ -19,7 +17,7 @@ public class EventResultsDto {
     }
 
     public int getTotalBenefitAmount() {
-        return totalBenefitAmount;
+        return eventBenefits.getTotalBenefit();
     }
 
     public Badge getBadge() {
