@@ -47,7 +47,6 @@ public class OutputView {
         System.out.println(BENEFIT_LIST);
         String benefitMessage = eventResultsDto.getBenefitMessage();
 
-
         if (benefitMessage.isEmpty()) {
             System.out.println(EMPTY);
             return;
