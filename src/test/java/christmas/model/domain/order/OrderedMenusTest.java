@@ -11,9 +11,10 @@ public class OrderedMenusTest {
 
     // 테스트에 사용하기 위해 OrderedMenus 제공
     public static OrderedMenus makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer() {
-        List<RequestOrder> requestOrders = List.of(new RequestOrder("타파스", 3),
+        List<RequestOrder> requestOrderList = List.of(new RequestOrder("타파스", 3),
                 new RequestOrder("바비큐립", 2),
                 new RequestOrder("아이스크림", 3));
+        RequestOrders requestOrders = new RequestOrders(requestOrderList);
 
         return new OrderedMenus(requestOrders);
     }
