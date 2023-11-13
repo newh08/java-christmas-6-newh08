@@ -18,12 +18,14 @@ public class TotalDiscount {
         return new TotalDiscount();
     }
 
-    public DiscountBenefit applyDiscount(OrderedMenus orderedMenus, Date date) {
-        int discountBenefit = discounts.stream()
-                .peek(discount -> discount.calculateDiscountAmount(orderedMenus, date))
+    public void applyDiscount(OrderedMenus orderedMenus, Date date) {
+        discounts.forEach(discount -> discount.calculateDiscountAmount(orderedMenus, date));
+    }
+
+    public int calculateDiscountBenefit() {
+        return discounts.stream()
                 .mapToInt(Discount::getDiscountAmount)
                 .sum();
-        return new DiscountBenefit(discountBenefit);
     }
 
     public Stream<String> makeDiscountBenefitMessageStream() {
