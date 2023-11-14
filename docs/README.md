@@ -71,7 +71,7 @@
 - ##### 배지 정보 저장 - Badge
   - [x] 출력 메시지 위해 배지 이름 추가 및 toString 오버라이딩
   - [x] 할인 금액을 통해 배지 등급 결정하기
-- ##### 모든 혜택 저장 및 업데이트 하기 - EventResults
+- ##### 모든 혜택 저장 및 업데이트 하기 - ChristmasEventStrategy
   - [x] 혜택 업데이트 하기
 - ##### 혜택 결과를 저장하기위한 싱글턴 저장소 - EventRepository
   - [x] 싱글턴 구현 
