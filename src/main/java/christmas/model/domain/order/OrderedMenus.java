@@ -1,7 +1,7 @@
 package christmas.model.domain.order;
 
-import christmas.model.domain.event.benefit.Gift;
-import christmas.model.domain.menu.MenuCategory;
+import christmas.model.domain.date.Date;
+import christmas.model.domain.event.EventStrategy;
 
 public class OrderedMenus {
 
@@ -18,12 +18,9 @@ public class OrderedMenus {
         return requestOrders.updatePrice();
     }
 
-    public Gift makeGift() {
-        return totalOrderPrice.makeGiftPerTotalOrderPrice();
-    }
-
-    public int getNumberOfSpecificCatalogOrder(MenuCategory menuCategory) {
-        return requestOrders.getNumberOfSpecificCatalogOrder(menuCategory);
+    public EventStrategy applyEvent(EventStrategy eventStrategy, Date date) {
+        eventStrategy.updateEventResult(requestOrders, totalOrderPrice, date);
+        return eventStrategy;
     }
 
     public RequestOrders getRequestOrders() {
