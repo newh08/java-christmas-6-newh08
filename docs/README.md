@@ -66,7 +66,7 @@
   - [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount
   - [x] 각 Discount 의 금액이 0원이 아닌지 확인하는 기능 구현
   - [x] 각 Discount 를 리셋하기
-- [x] 모든 할인 전략을 저장하고 리스트를 만들어 반환함 - DiscountStrategy
+- ##### 크리스마스 이벤트 할인 전략을 저장하고 리스트를 만들어 반환함 - ChristmasDiscountStrategies (ENUM)
 - ### Event 전략 관련
 - ##### 이벤트 전략 추상화하기 위한 인터페이스 - EventStrategy
 - ##### 모든 혜택 저장 및 업데이트 하기 - ChristmasEventStrategy
