@@ -1,11 +1,11 @@
 package christmas.model.domain.event;
 
 import static christmas.model.domain.event.EventBenefits.makeInitialConditionEventBenefits;
+import static christmas.model.domain.order.RequestOrdersTest.makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
-import christmas.model.domain.order.OrderedMenus;
-import christmas.model.domain.order.OrderedMenusTest;
+import christmas.model.domain.order.RequestOrders;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,9 +15,9 @@ class EventBenefitsTest {
     @Test
     void test() {
         EventBenefits eventBenefits = makeInitialConditionEventBenefits();
-        OrderedMenus orderedMenus = OrderedMenusTest.makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
+        RequestOrders requestOrders = makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer();
         Date date = new Date(7);
-        eventBenefits.applyDiscount(orderedMenus, date);
+        eventBenefits.applyDiscount(requestOrders, date);
 
         String giftMessage = eventBenefits.getGiftMessage();
         assertThat(giftMessage).isEqualTo("없음");

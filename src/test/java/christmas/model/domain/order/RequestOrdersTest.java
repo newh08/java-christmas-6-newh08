@@ -9,8 +9,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class RequestOrdersTest {
+public class RequestOrdersTest {
     private RequestOrders requestOrders;
+
+    // 테스트에 사용하기 위해 OrderedMenus 제공
+    public static RequestOrders makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer() {
+        List<RequestOrder> requestOrderList = List.of(new RequestOrder("타파스", 3),
+                new RequestOrder("바비큐립", 2),
+                new RequestOrder("아이스크림", 3));
+
+        return new RequestOrders(requestOrderList);
+    }
 
     @BeforeEach
     void init() {
@@ -62,6 +71,18 @@ class RequestOrdersTest {
     void requestOrderTest_5() {
         TotalOrderPrice totalOrderPrice = requestOrders.updatePrice();
         assertThat(totalOrderPrice.getTotalOrderPrice()).isEqualTo(273500);
+    }
+
+    @DisplayName("각 카테고리별 주문 수량을 반환한다.")
+    @Test
+    void requestOrdersTest_6() {
+
+        int numberOfAppetizerOrder = requestOrders.getNumberOfSpecificCatalogOrder(MenuCategory.APPETIZER);
+        int numberOfMainOrder = requestOrders.getNumberOfSpecificCatalogOrder(MenuCategory.MAIN);
+
+        assertThat(numberOfAppetizerOrder).isEqualTo(5);
+        assertThat(numberOfMainOrder).isEqualTo(0);
+
     }
 
 }

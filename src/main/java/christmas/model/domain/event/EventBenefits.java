@@ -6,7 +6,8 @@ import static christmas.model.domain.event.benefit.TotalDiscount.makeInitialCond
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.event.benefit.TotalDiscount;
-import christmas.model.domain.order.OrderedMenus;
+import christmas.model.domain.order.RequestOrders;
+import christmas.model.domain.order.TotalOrderPrice;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,12 +24,12 @@ public class EventBenefits {
         return new EventBenefits(makeInitialConditionTotalDiscount(), makeInitialConditionGift());
     }
 
-    public void applyDiscount(OrderedMenus orderedMenus, Date date) {
-        totalDiscount.applyDiscount(orderedMenus, date);
+    public void applyDiscount(RequestOrders requestOrders, Date date) {
+        totalDiscount.applyDiscount(requestOrders, date);
     }
 
-    public void updateGift(OrderedMenus orderedMenus) {
-        this.gift = orderedMenus.makeGift();
+    public void updateGift(TotalOrderPrice totalOrderPrice) {
+        this.gift = totalOrderPrice.makeGiftPerTotalOrderPrice();
     }
 
     public String makeBenefitMessage() {

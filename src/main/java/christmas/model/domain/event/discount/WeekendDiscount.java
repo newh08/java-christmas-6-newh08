@@ -4,15 +4,15 @@ import static christmas.model.domain.event.discount.WeekDiscount.WEEK_AND_WEEKEN
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.menu.MenuCategory;
-import christmas.model.domain.order.OrderedMenus;
+import christmas.model.domain.order.RequestOrders;
 
 public class WeekendDiscount extends Discount {
     private static final String WEEKEND_DISCOUNT_MESSAGE = "주말 할인: %,d원";
 
     @Override
-    public void calculateDiscountAmount(OrderedMenus orderedMenus, Date date) {
+    public void calculateDiscountAmount(RequestOrders requestOrders, Date date) {
         if (date.isWeekEnd()) {
-            int numberOfMainOrder = orderedMenus.getNumberOfSpecificCatalogOrder(MenuCategory.MAIN);
+            int numberOfMainOrder = requestOrders.getNumberOfSpecificCatalogOrder(MenuCategory.MAIN);
             super.updateDiscountAmount(WEEK_AND_WEEKEND_EVENT_DISCOUNT_AMOUNT * numberOfMainOrder);
         }
     }

@@ -1,12 +1,12 @@
 package christmas.model.domain.event;
 
 import static christmas.model.domain.event.benefit.TotalDiscount.makeInitialConditionTotalDiscount;
-import static christmas.model.domain.order.OrderedMenusTest.makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer;
+import static christmas.model.domain.order.RequestOrdersTest.makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.TotalDiscount;
-import christmas.model.domain.order.OrderedMenus;
+import christmas.model.domain.order.RequestOrders;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,10 +16,10 @@ class TotalDiscountTest {
     @Test
     void totalDiscountTest() {
         Date date = new Date(23);
-        OrderedMenus orderedMenus = makeOrderedMenusWithTwoMainThreeDessertThreeAppetizer();
+        RequestOrders requestOrders = makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer();
 
         TotalDiscount totalDiscount = makeInitialConditionTotalDiscount();
-        totalDiscount.applyDiscount(orderedMenus, date);
+        totalDiscount.applyDiscount(requestOrders, date);
         assertThat(totalDiscount.calculateDiscountBenefit()).isEqualTo(-7246);
     }
 

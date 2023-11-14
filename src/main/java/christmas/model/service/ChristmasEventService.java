@@ -5,7 +5,8 @@ import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.event.EventRepository;
-import christmas.model.domain.event.EventResults;
+import christmas.model.domain.event.ChristmasEventStrategy;
+import christmas.model.domain.event.EventStrategy;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import christmas.model.domain.order.RequestOrders;
@@ -40,21 +41,21 @@ public class ChristmasEventService {
     }
 
     public EventResultsDto makeEventResultsDto(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
-        EventResults eventResults = EventResults.makeInitialConditionEventResults();
+        EventStrategy christmasEventStrategy = ChristmasEventStrategy.makeInitialConditionEventResults();
         if (checkTotalOrderPriceOverMinimumEventPrice(orderedMenusDto)) {
-            executeEvent(orderedMenusDto, dateDto, eventResults);
+            executeEvent(orderedMenusDto, dateDto, christmasEventStrategy);
         }
-        runtimeUserId = eventRepository.save(eventResults);
-        return converter.from(eventResults);
+        runtimeUserId = eventRepository.save(christmasEventStrategy);
+        return converter.from(christmasEventStrategy);
     }
 
     private static boolean checkTotalOrderPriceOverMinimumEventPrice(OrderedMenusDto orderedMenusDto) {
         return orderedMenusDto.getTotalOrderPrice() >= MINIMUM_EVENT_PRICE;
     }
 
-    private void executeEvent(OrderedMenusDto orderedMenusDto, DateDto dateDto, EventResults eventResults) {
+    private void executeEvent(OrderedMenusDto orderedMenusDto, DateDto dateDto, EventStrategy eventStrategy) {
         OrderedMenus orderedMenus = converter.from(orderedMenusDto);
         Date date = converter.from(dateDto);
-        eventResults.updateEventResult(orderedMenus, date);
+        orderedMenus.applyEvent(eventStrategy, date);
     }
 }

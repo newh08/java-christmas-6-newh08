@@ -1,7 +1,7 @@
 package christmas.model.domain.event.discount;
 
 import christmas.model.domain.date.Date;
-import christmas.model.domain.order.OrderedMenus;
+import christmas.model.domain.order.RequestOrders;
 
 public class ChristmasDiscount extends Discount{
     private static final int BASIC_DISCOUNT_AMOUNT = 1000;
@@ -10,7 +10,7 @@ public class ChristmasDiscount extends Discount{
     private static final String CHRISTMAS_DISCOUNT_MESSAGE = "크리스마스 디데이 할인: %,d원";
 
     @Override
-    public void calculateDiscountAmount(OrderedMenus orderedMenus, Date date) {
+    public void calculateDiscountAmount(RequestOrders requestOrders, Date date) {
         if (date.isAfterChristmas()) {
             return;
         }

@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class EventRepository {
     private static EventRepository instance;
-    private final Map<Long, EventResults> eventRepository;
+    private final Map<Long, EventStrategy> eventRepository;
     private final Map<Long, Badge> badgeRepository;
     private long id;
 
-    private EventRepository(Map<Long, EventResults> eventRepository, Map<Long, Badge> badgeRepository) {
+    private EventRepository(Map<Long, EventStrategy> eventRepository, Map<Long, Badge> badgeRepository) {
         this.eventRepository = eventRepository;
         this.badgeRepository = badgeRepository;
         id = 0L;
@@ -22,14 +22,14 @@ public class EventRepository {
         return instance;
     }
 
-    public long save(EventResults eventResults) {
+    public long save(EventStrategy eventStrategy) {
         long currentId = id++;
-        eventRepository.put(currentId, eventResults);
-        badgeRepository.put(currentId, eventResults.getBadge());
+        eventRepository.put(currentId, eventStrategy);
+        badgeRepository.put(currentId, eventStrategy.getBadge());
         return id;
     }
 
-    public EventResults getEventResultsById(long id) {
+    public EventStrategy getEventResultsById(long id) {
         return eventRepository.get(id);
     }
 }

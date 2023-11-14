@@ -4,7 +4,7 @@ import christmas.model.domain.date.Date;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.dto.DateDto;
-import christmas.model.domain.event.EventResults;
+import christmas.model.domain.event.EventStrategy;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import java.util.Map.Entry;
@@ -20,8 +20,8 @@ public class Converter {
         return new RequestOrder(inputMenu, inputQuantity);
     }
 
-    public EventResultsDto from(final EventResults eventResults) {
-        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getBadge());
+    public EventResultsDto from(final EventStrategy eventStrategy) {
+        return new EventResultsDto(eventStrategy.getEventBenefit(), eventStrategy.getBadge());
     }
 
     public OrderedMenusDto from(final OrderedMenus orderedMenus) {
