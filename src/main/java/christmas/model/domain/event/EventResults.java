@@ -9,7 +9,7 @@ public class EventResults {
         this.badge = badge;
     }
 
-    public static EventResults makeInitialEventResults() {
+    public static EventResults makeZeroEventResults() {
         return new EventResults(EventBenefits.makeInitialConditionEventBenefits(), Badge.NONE);
     }
 

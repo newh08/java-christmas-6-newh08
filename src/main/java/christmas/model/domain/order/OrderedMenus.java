@@ -20,7 +20,7 @@ public class OrderedMenus {
 
     public EventResults applyEvent(EventStrategy eventStrategy, Date date) {
         if (totalOrderPrice.isUnderMinimumEventPrice()) {
-            return EventResults.makeInitialEventResults();
+            return EventResults.makeZeroEventResults();
         }
         return eventStrategy.updateEventResult(requestOrders, date);
     }
