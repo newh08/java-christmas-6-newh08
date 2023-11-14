@@ -1,39 +1,31 @@
 package christmas.model.domain.event;
 
-import static christmas.model.domain.event.EventBenefits.makeInitialConditionEventBenefits;
-
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.Gift;
+import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
+import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.RequestOrders;
 import christmas.model.domain.order.TotalOrderPrice;
 
 public class ChristmasEventStrategy implements EventStrategy{
-    private final EventBenefits eventBenefits;
-    private Badge badge;
+    private final TotalDiscount christmasTotalDiscount;
 
-    public ChristmasEventStrategy(EventBenefits eventBenefits, Badge badge) {
-        this.eventBenefits = eventBenefits;
-        this.badge = badge;
+    public ChristmasEventStrategy(ChristmasTotalDiscount christmasTotalDiscount) {
+        this.christmasTotalDiscount = christmasTotalDiscount;
     }
 
-    public static ChristmasEventStrategy makeInitialConditionEventResults() {
-        return new ChristmasEventStrategy(makeInitialConditionEventBenefits(), Badge.NONE);
+    public EventResults updateEventResult(RequestOrders requestOrders, Date date) {
+        christmasTotalDiscount.applyDiscount(requestOrders, date);
+        TotalOrderPrice totalOrderPrice = requestOrders.updatePrice();
+        Gift gift = totalOrderPrice.makeGiftPerTotalOrderPrice();
+
+        EventBenefits eventBenefits = new EventBenefits(christmasTotalDiscount, gift);
+        Badge badge1 = updateBadge(eventBenefits);
+        return new EventResults(eventBenefits, badge1);
     }
 
-    public void updateEventResult(RequestOrders requestOrders, TotalOrderPrice totalOrderPrice, Date date) {
-        eventBenefits.applyDiscount(requestOrders, date);
-        eventBenefits.updateGift(totalOrderPrice);
-        updateBadge();
+    private Badge updateBadge(EventBenefits eventBenefits) {
+        return Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
     }
 
-    private void updateBadge() {
-        badge = Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
-    }
-
-    public EventBenefits getEventBenefit() {
-        return eventBenefits;
-    }
-
-    public Badge getBadge() {
-        return badge;
-    }
 }
