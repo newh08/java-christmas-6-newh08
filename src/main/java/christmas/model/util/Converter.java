@@ -4,7 +4,7 @@ import christmas.model.domain.date.Date;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.dto.DateDto;
-import christmas.model.domain.event.EventStrategy;
+import christmas.model.domain.event.EventResults;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import java.util.Map.Entry;
@@ -14,25 +14,25 @@ public class Converter {
         return new DateDto(inputDate);
     }
 
-    public RequestOrder from(Entry<String, Integer> input) {
+    public RequestOrder from(final Entry<String, Integer> input) {
         String inputMenu = input.getKey();
         Integer inputQuantity = input.getValue();
         return new RequestOrder(inputMenu, inputQuantity);
     }
 
-    public EventResultsDto from(final EventStrategy eventStrategy) {
-        return new EventResultsDto(eventStrategy.getEventBenefit(), eventStrategy.getBadge());
+    public EventResultsDto from(final EventResults eventResults) {
+        return new EventResultsDto(eventResults.getEventBenefit(), eventResults.getBadge());
     }
 
     public OrderedMenusDto from(final OrderedMenus orderedMenus) {
         return new OrderedMenusDto(orderedMenus.getRequestOrders(), orderedMenus.getTotalOrderPrice());
     }
 
-    public Date from(DateDto dateDto) {
+    public Date from(final DateDto dateDto) {
         return new Date(dateDto.getDate());
     }
 
-    public OrderedMenus from(OrderedMenusDto orderedMenusDto) {
+    public OrderedMenus from(final OrderedMenusDto orderedMenusDto) {
         return new OrderedMenus(orderedMenusDto.getRequestOrders());
     }
 }
