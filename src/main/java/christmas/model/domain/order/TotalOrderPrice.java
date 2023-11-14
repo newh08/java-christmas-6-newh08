@@ -3,6 +3,8 @@ package christmas.model.domain.order;
 import christmas.model.domain.event.benefit.Gift;
 
 public class TotalOrderPrice {
+    private static final int MINIMUM_EVENT_PRICE = 10000;
+
     private int totalOrderPrice;
 
     public TotalOrderPrice() {
@@ -19,5 +21,9 @@ public class TotalOrderPrice {
 
     public int getTotalOrderPrice() {
         return totalOrderPrice;
+    }
+
+    public boolean isUnderMinimumEventPrice() {
+        return totalOrderPrice < MINIMUM_EVENT_PRICE;
     }
 }
