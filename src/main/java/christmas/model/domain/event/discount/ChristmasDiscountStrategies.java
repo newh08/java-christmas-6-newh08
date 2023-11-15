@@ -1,10 +1,14 @@
 package christmas.model.domain.event.discount;
 
+import christmas.model.domain.event.discount.christmas.ChristmasDDayDiscount;
+import christmas.model.domain.event.discount.christmas.ChristmasSpecialDiscount;
+import christmas.model.domain.event.discount.christmas.ChristmasWeekDiscount;
+import christmas.model.domain.event.discount.christmas.ChristmasWeekendDiscount;
 import java.util.Arrays;
 import java.util.List;
 
 public enum ChristmasDiscountStrategies {
-    CHRISTMAS(new ChristmasDiscount()), WEEK(new WeekDiscount()), WEEKEND(new WeekendDiscount()), SPECIAL(new SpecialDiscount());
+    DDAY(new ChristmasDDayDiscount()), WEEK(new ChristmasWeekDiscount()), WEEKEND(new ChristmasWeekendDiscount()), SPECIAL(new ChristmasSpecialDiscount());
 
     private final Discount discount;
 

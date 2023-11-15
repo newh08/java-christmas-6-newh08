@@ -1,12 +1,13 @@
-package christmas.model.domain.event.discount;
+package christmas.model.domain.event.discount.christmas;
 
-import static christmas.model.domain.event.discount.WeekDiscount.WEEK_AND_WEEKEND_EVENT_DISCOUNT_AMOUNT;
+import static christmas.model.domain.event.discount.christmas.ChristmasWeekDiscount.WEEK_AND_WEEKEND_EVENT_DISCOUNT_AMOUNT;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.discount.Discount;
 import christmas.model.domain.menu.MenuCategory;
 import christmas.model.domain.order.RequestOrders;
 
-public class WeekendDiscount extends Discount {
+public class ChristmasWeekendDiscount extends Discount {
     private static final String WEEKEND_DISCOUNT_MESSAGE = "주말 할인: %,d원";
 
     @Override
@@ -18,7 +19,7 @@ public class WeekendDiscount extends Discount {
     }
 
     @Override
-    public void reset() {
+    protected void reset() {
         resetDiscount();
     }
 

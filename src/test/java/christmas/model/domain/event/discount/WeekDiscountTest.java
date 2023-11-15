@@ -4,6 +4,7 @@ import static christmas.model.domain.order.RequestOrdersTest.makeRequestOrdersWi
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.discount.christmas.ChristmasWeekDiscount;
 import christmas.model.domain.order.RequestOrders;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ class WeekDiscountTest {
         RequestOrders requestOrders = makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer();
         Date date = new Date(11);
 
-        Discount discount = new WeekDiscount();
+        Discount discount = new ChristmasWeekDiscount();
         discount.calculateDiscountAmount(requestOrders, date);
         assertThat(discount.toString()).isEqualTo("평일 할인: -6,069원");
     }
@@ -27,7 +28,7 @@ class WeekDiscountTest {
         RequestOrders requestOrders = makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer();
         Date date = new Date(9);
 
-        Discount discount = new WeekDiscount();
+        Discount discount = new ChristmasWeekDiscount();
         discount.calculateDiscountAmount(requestOrders, date);
         assertThat(discount.getDiscountAmount()).isEqualTo(0);
     }

@@ -1,9 +1,10 @@
-package christmas.model.domain.event.discount;
+package christmas.model.domain.event.discount.christmas;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.discount.Discount;
 import christmas.model.domain.order.RequestOrders;
 
-public class ChristmasDiscount extends Discount{
+public class ChristmasDDayDiscount extends Discount {
     private static final int BASIC_DISCOUNT_AMOUNT = 1000;
     private static final int ADDITIONAL_DISCOUNT_AMOUNT_PER_DAY = 100;
     private static final int NUMBER_TO_COUNT_DISCOUNT_DAY = 24;
@@ -24,7 +25,7 @@ public class ChristmasDiscount extends Discount{
     }
 
     @Override
-    public void reset() {
+    protected void reset() {
         resetDiscount();
     }
 
