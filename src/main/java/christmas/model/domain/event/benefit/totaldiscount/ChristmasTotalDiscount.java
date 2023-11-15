@@ -1,6 +1,7 @@
 package christmas.model.domain.event.benefit.totaldiscount;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.DiscountBenefit;
 import christmas.model.domain.event.discount.Discount;
 import christmas.model.domain.event.discount.ChristmasDiscountStrategies;
 import christmas.model.domain.order.RequestOrders;
@@ -28,6 +29,11 @@ public class ChristmasTotalDiscount implements TotalDiscount {
         return discounts.stream()
                 .mapToInt(Discount::getDiscountAmount)
                 .sum();
+    }
+
+    @Override
+    public DiscountBenefit makeDiscountBenefit() {
+        return new DiscountBenefit(calculateDiscountBenefit(), makeDiscountBenefitMessageStream());
     }
 
     @Override

@@ -2,6 +2,7 @@ package christmas.model.domain.event.strategy;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.Badge;
+import christmas.model.domain.event.benefit.DiscountBenefit;
 import christmas.model.domain.event.benefit.gift.ChristmasGift;
 import christmas.model.domain.event.benefit.EventBenefits;
 import christmas.model.domain.event.EventResults;
@@ -23,10 +24,11 @@ public class ChristmasEventStrategy implements EventStrategy {
     @Override
     public EventResults updateEventResult(RequestOrders requestOrders, Date date) {
         christmasTotalDiscount.applyDiscount(requestOrders, date);
+        DiscountBenefit discountBenefit = christmasTotalDiscount.makeDiscountBenefit();
         TotalOrderPrice totalOrderPrice = requestOrders.getTotalOrderPrice();
         Gift gift = ChristmasGift.makeChristmasGift(totalOrderPrice);
 
-        EventBenefits eventBenefits = new EventBenefits(christmasTotalDiscount, gift);
+        EventBenefits eventBenefits = new EventBenefits(discountBenefit, gift);
         Badge badge = Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
         return new EventResults(eventBenefits, badge);
     }

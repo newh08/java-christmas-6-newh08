@@ -1,28 +1,27 @@
 package christmas.model.domain.event.benefit;
 
+import static christmas.model.domain.event.benefit.DiscountBenefit.makeZeroDiscountBenefit;
 import static christmas.model.domain.event.benefit.gift.ChristmasGift.makeNoneGift;
-import static christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount.makeZeroTotalDiscount;
 
 import christmas.model.domain.event.benefit.gift.Gift;
-import christmas.model.domain.event.benefit.totaldiscount.TotalDiscount;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class EventBenefits {
-    private final TotalDiscount totalDiscount;
+    private final DiscountBenefit discountBenefit;
     private final Gift gift;
 
-    public EventBenefits(TotalDiscount totalDiscount, Gift gift) {
-        this.totalDiscount = totalDiscount;
+    public EventBenefits(DiscountBenefit discountBenefit, Gift gift) {
+        this.discountBenefit = discountBenefit;
         this.gift = gift;
     }
 
     public static EventBenefits makeZeroEventBenefits() {
-        return new EventBenefits(makeZeroTotalDiscount(), makeNoneGift());
+        return new EventBenefits(makeZeroDiscountBenefit(), makeNoneGift());
     }
 
     public String makeBenefitMessage() {
-        Stream<String> discountBenefitMessage = totalDiscount.makeDiscountBenefitMessageStream();
+        Stream<String> discountBenefitMessage = discountBenefit.getDiscountMessage();
         Stream<String> giftBenefitMessage = gift.makeGiftBenefitMessageStream();
         return Stream.concat(discountBenefitMessage, giftBenefitMessage)
                 .collect(Collectors.joining("\n"));
@@ -33,11 +32,11 @@ public class EventBenefits {
     }
 
     public int getDiscountBenefit() {
-        return totalDiscount.calculateDiscountBenefit();
+        return discountBenefit.getDiscountBenefit();
     }
 
     public int getTotalBenefit() {
-        return totalDiscount.calculateDiscountBenefit() + gift.getGiftBenefit();
+        return discountBenefit.getDiscountBenefit() + gift.getGiftBenefit();
     }
 
 }
