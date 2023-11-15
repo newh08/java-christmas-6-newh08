@@ -5,4 +5,6 @@ import christmas.model.domain.order.RequestOrders;
 
 public interface EventStrategy {
     EventResults updateEventResult(RequestOrders requestOrders, Date date);
+
+    int getMinimumOrderPrice();
 }

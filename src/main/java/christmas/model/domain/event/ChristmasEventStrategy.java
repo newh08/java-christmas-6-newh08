@@ -8,12 +8,15 @@ import christmas.model.domain.order.RequestOrders;
 import christmas.model.domain.order.TotalOrderPrice;
 
 public class ChristmasEventStrategy implements EventStrategy{
+    private final int CHRISTMAS_EVENT_APPLY_MINIMUM_PRICE = 10000;
+
     private final TotalDiscount christmasTotalDiscount;
 
     public ChristmasEventStrategy(ChristmasTotalDiscount christmasTotalDiscount) {
         this.christmasTotalDiscount = christmasTotalDiscount;
     }
 
+    @Override
     public EventResults updateEventResult(RequestOrders requestOrders, Date date) {
         christmasTotalDiscount.applyDiscount(requestOrders, date);
         TotalOrderPrice totalOrderPrice = requestOrders.updatePrice();
@@ -26,6 +29,11 @@ public class ChristmasEventStrategy implements EventStrategy{
 
     private Badge updateBadge(EventBenefits eventBenefits) {
         return Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
+    }
+
+    @Override
+    public int getMinimumOrderPrice() {
+        return CHRISTMAS_EVENT_APPLY_MINIMUM_PRICE;
     }
 
 }
