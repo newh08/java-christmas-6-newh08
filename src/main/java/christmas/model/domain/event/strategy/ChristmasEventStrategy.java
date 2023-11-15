@@ -27,12 +27,8 @@ public class ChristmasEventStrategy implements EventStrategy {
         Gift gift = ChristmasGift.makeChristmasGift(totalOrderPrice);
 
         EventBenefits eventBenefits = new EventBenefits(christmasTotalDiscount, gift);
-        Badge badge1 = updateBadge(eventBenefits);
-        return new EventResults(eventBenefits, badge1);
-    }
-
-    private Badge updateBadge(EventBenefits eventBenefits) {
-        return Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
+        Badge badge = Badge.getBadge(Math.abs(eventBenefits.getTotalBenefit()));
+        return new EventResults(eventBenefits, badge);
     }
 
     @Override
