@@ -1,7 +1,7 @@
 package christmas;
 
 import camp.nextstep.edu.missionutils.Console;
-import christmas.controller.ChristmasEventController;
+import christmas.controller.EventController;
 import christmas.model.domain.event.strategy.ChristmasEventStrategy;
 import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.strategy.EventStrategy;
@@ -13,8 +13,8 @@ import christmas.view.OutputView;
 
 public class AppConfig {
 
-    public ChristmasEventController getChristmasEventController() {
-        return new ChristmasEventController(christmasEventService(), inputView(), outputView());
+    public EventController getChristmasEventController() {
+        return new EventController(christmasEventService(), inputView(), outputView());
     }
 
     private InputView inputView() {

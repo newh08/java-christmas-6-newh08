@@ -3,19 +3,19 @@ package christmas.controller;
 import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.RequestOrdersDto;
-import christmas.model.service.ChristmasEventService;
+import christmas.model.service.EventService;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class ChristmasEventController {
-    private final ChristmasEventService christmasEventService;
+public class EventController {
+    private final EventService eventService;
     private final InputView inputView;
     private final OutputView outputView;
 
-    public ChristmasEventController(ChristmasEventService christmasEventService, InputView inputView, OutputView outputView) {
-        this.christmasEventService = christmasEventService;
+    public EventController(EventService eventService, InputView inputView, OutputView outputView) {
+        this.eventService = eventService;
         this.inputView = inputView;
         this.outputView = outputView;
     }
@@ -29,18 +29,18 @@ public class ChristmasEventController {
         outputView.printOrder(requestOrdersDto);
         outputView.printTotalOrderPrice(requestOrdersDto);
 
-        EventResultsDto eventResultsDto = christmasEventService.makeEventResultsDto(requestOrdersDto, dateDto);
+        EventResultsDto eventResultsDto = eventService.makeEventResultsDto(requestOrdersDto, dateDto);
         outputView.printEventResult(eventResultsDto, requestOrdersDto);
     }
 
     private DateDto makeDateDto() {
         int userInputDate = inputView.readDate();
-        return christmasEventService.makeDateDto(userInputDate);
+        return eventService.makeDateDto(userInputDate);
     }
 
     private RequestOrdersDto makeRequestOrdersDto() {
         Map<String, Integer> userInputOrders = inputView.readOrders();
-        return christmasEventService.makeRequestOrdersDto(userInputOrders);
+        return eventService.makeRequestOrdersDto(userInputOrders);
     }
 
     private <T> T repeat(Supplier<T> something) {

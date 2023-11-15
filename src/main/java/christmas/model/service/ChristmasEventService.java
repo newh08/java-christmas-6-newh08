@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ChristmasEventService {
+public class ChristmasEventService implements EventService{
 
     private final Converter converter;
     private final EventRepository eventRepository;
@@ -27,10 +27,12 @@ public class ChristmasEventService {
         this.eventStrategy = eventStrategy;
     }
 
+    @Override
     public DateDto makeDateDto(int userInputDate) {
         return converter.from(userInputDate);
     }
 
+    @Override
     public RequestOrdersDto makeRequestOrdersDto(Map<String, Integer> inputOrders) {
         List<RequestOrder> convertedRequestOrders = inputOrders.entrySet().stream()
                                                         .map(converter::from)
@@ -39,6 +41,7 @@ public class ChristmasEventService {
         return converter.from(requestOrders);
     }
 
+    @Override
     public EventResultsDto makeEventResultsDto(RequestOrdersDto requestOrdersDto, DateDto dateDto) {
         EventResults eventResults = executeEvent(requestOrdersDto, dateDto, eventStrategy);
         runtimeUserId = eventRepository.save(eventResults);
