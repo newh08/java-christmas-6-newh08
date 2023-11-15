@@ -18,16 +18,19 @@ public class ChristmasTotalDiscount implements TotalDiscount {
         return new ChristmasTotalDiscount();
     }
 
+    @Override
     public void applyDiscount(RequestOrders requestOrders, Date date) {
         discounts.forEach(discount -> discount.calculateDiscountAmount(requestOrders, date));
     }
 
+    @Override
     public int calculateDiscountBenefit() {
         return discounts.stream()
                 .mapToInt(Discount::getDiscountAmount)
                 .sum();
     }
 
+    @Override
     public Stream<String> makeDiscountBenefitMessageStream() {
         return discounts.stream()
                 .filter(Discount::isNotZero)

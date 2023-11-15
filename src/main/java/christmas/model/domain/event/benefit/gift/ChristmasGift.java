@@ -24,6 +24,7 @@ public class ChristmasGift implements Gift {
         return new ChristmasGift(totalOrderPrice.getTotalOrderPrice());
     }
 
+    @Override
     public int getGiftBenefit() {
         if (gift) {
             return CHRISTMAS_GIFT_PRICE;
@@ -31,6 +32,7 @@ public class ChristmasGift implements Gift {
         return 0;
     }
 
+    @Override
     public String makeGiftMessage() {
         if (gift) {
             return CHRISTMAS_GIFT_TRUE_MESSAGE;
@@ -38,11 +40,11 @@ public class ChristmasGift implements Gift {
         return CHRISTMAS_GIFT_FALSE_MESSAGE;
     }
 
+    @Override
     public Stream<String> makeGiftBenefitMessageStream() {
         if (gift) {
             return Stream.of(String.format(CHRISTMAS_GIFT_BENEFIT_MESSAGE, CHRISTMAS_GIFT_PRICE));
         }
         return Stream.empty();
     }
-
 }
