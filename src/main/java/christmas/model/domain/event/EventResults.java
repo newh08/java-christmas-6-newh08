@@ -1,5 +1,8 @@
 package christmas.model.domain.event;
 
+import christmas.model.domain.event.benefit.Badge;
+import christmas.model.domain.event.benefit.EventBenefits;
+
 public class EventResults {
     private final EventBenefits eventBenefits;
     private final Badge badge;

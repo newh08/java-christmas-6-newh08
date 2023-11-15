@@ -69,7 +69,7 @@ public class RequestOrdersTest {
     @DisplayName("총 주문 금액을 반환한다.")
     @Test
     void requestOrderTest_5() {
-        TotalOrderPrice totalOrderPrice = requestOrders.updatePrice();
+        TotalOrderPrice totalOrderPrice = requestOrders.getTotalOrderPrice();
         assertThat(totalOrderPrice.getTotalOrderPrice()).isEqualTo(273500);
     }
 

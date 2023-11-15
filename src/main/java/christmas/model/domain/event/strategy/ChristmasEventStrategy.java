@@ -1,13 +1,16 @@
-package christmas.model.domain.event;
+package christmas.model.domain.event.strategy;
 
 import christmas.model.domain.date.Date;
+import christmas.model.domain.event.benefit.Badge;
+import christmas.model.domain.event.benefit.EventBenefits;
+import christmas.model.domain.event.EventResults;
 import christmas.model.domain.event.benefit.Gift;
 import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
 import christmas.model.domain.event.benefit.TotalDiscount;
 import christmas.model.domain.order.RequestOrders;
 import christmas.model.domain.order.TotalOrderPrice;
 
-public class ChristmasEventStrategy implements EventStrategy{
+public class ChristmasEventStrategy implements EventStrategy {
     private final int CHRISTMAS_EVENT_APPLY_MINIMUM_PRICE = 10000;
 
     private final TotalDiscount christmasTotalDiscount;

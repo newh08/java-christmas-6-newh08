@@ -2,7 +2,7 @@ package christmas.model.domain.order;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.EventResults;
-import christmas.model.domain.event.EventStrategy;
+import christmas.model.domain.event.strategy.EventStrategy;
 
 public class OrderedMenus {
 

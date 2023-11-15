@@ -6,7 +6,7 @@ import christmas.model.domain.dto.EventResultsDto;
 import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.EventResults;
-import christmas.model.domain.event.EventStrategy;
+import christmas.model.domain.event.strategy.EventStrategy;
 import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import christmas.model.domain.order.RequestOrders;

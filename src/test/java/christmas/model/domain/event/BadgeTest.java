@@ -2,6 +2,7 @@ package christmas.model.domain.event;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import christmas.model.domain.event.benefit.Badge;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
+import christmas.model.domain.event.benefit.EventBenefits;
+import christmas.model.domain.event.strategy.ChristmasEventStrategy;
 import christmas.model.domain.order.RequestOrders;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

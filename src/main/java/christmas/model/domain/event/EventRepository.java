@@ -1,5 +1,6 @@
 package christmas.model.domain.event;
 
+import christmas.model.domain.event.benefit.Badge;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,7 +1,7 @@
 package christmas.model.domain.dto;
 
-import christmas.model.domain.event.Badge;
-import christmas.model.domain.event.EventBenefits;
+import christmas.model.domain.event.benefit.Badge;
+import christmas.model.domain.event.benefit.EventBenefits;
 
 public class EventResultsDto {
     private final EventBenefits eventBenefits;
