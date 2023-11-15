@@ -10,11 +10,7 @@ public abstract class Discount {
 
     public abstract String toString();
 
-    public abstract void reset();
-
-    void updateDiscountAmount(int discountAmount) {
-        this.discountAmount -= discountAmount;
-    }
+    protected abstract void reset();
 
     public boolean isNotZero() {
         return discountAmount != 0;
@@ -26,5 +22,9 @@ public abstract class Discount {
 
     public int getDiscountAmount() {
         return discountAmount;
+    }
+
+    protected void updateDiscountAmount(int discountAmount) {
+        this.discountAmount -= discountAmount;
     }
 }
