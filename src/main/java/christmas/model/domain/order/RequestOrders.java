@@ -53,7 +53,7 @@ public class RequestOrders {
                 .collect(Collectors.joining("\n"));
     }
 
-    public TotalOrderPrice updatePrice() {
+    public TotalOrderPrice getTotalOrderPrice() {
         TotalOrderPrice totalOrderPrice = new TotalOrderPrice();
         for (RequestOrder requestOrder : requestOrders) {
             totalOrderPrice.updateTotalOrderPrice(requestOrder);

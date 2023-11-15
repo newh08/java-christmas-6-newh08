@@ -22,7 +22,7 @@ public class ChristmasEventStrategy implements EventStrategy {
     @Override
     public EventResults updateEventResult(RequestOrders requestOrders, Date date) {
         christmasTotalDiscount.applyDiscount(requestOrders, date);
-        TotalOrderPrice totalOrderPrice = requestOrders.updatePrice();
+        TotalOrderPrice totalOrderPrice = requestOrders.getTotalOrderPrice();
         Gift gift = totalOrderPrice.makeGiftPerTotalOrderPrice();
 
         EventBenefits eventBenefits = new EventBenefits(christmasTotalDiscount, gift);

@@ -1,15 +1,12 @@
 package christmas.model.domain.dto;
 
 import christmas.model.domain.order.RequestOrders;
-import christmas.model.domain.order.TotalOrderPrice;
 
 public class OrderedMenusDto {
     private final RequestOrders requestOrders;
-    private final TotalOrderPrice totalOrderPrice;
 
-    public OrderedMenusDto(RequestOrders requestOrders, TotalOrderPrice totalOrderPrice) {
+    public OrderedMenusDto(RequestOrders requestOrders) {
         this.requestOrders = requestOrders;
-        this.totalOrderPrice = totalOrderPrice;
     }
 
     public String getOrdersMessage() {
@@ -17,7 +14,7 @@ public class OrderedMenusDto {
     }
 
     public int getTotalOrderPrice() {
-        return totalOrderPrice.getTotalOrderPrice();
+        return requestOrders.getTotalOrderPrice().getTotalOrderPrice();
     }
 
     public RequestOrders getRequestOrders() { return requestOrders; }
