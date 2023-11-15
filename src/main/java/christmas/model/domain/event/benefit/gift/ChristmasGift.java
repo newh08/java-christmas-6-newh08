@@ -16,7 +16,7 @@ public class ChristmasGift implements Gift {
         this.gift = totalPrice >= MINIMUM_CHRISTMAS_GIFT_PRICE;
     }
 
-    public static Gift makeInitialConditionGift() {
+    public static Gift makeNoneGift() {
         return new ChristmasGift(0);
     }
 

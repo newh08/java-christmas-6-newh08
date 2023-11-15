@@ -1,7 +1,7 @@
 package christmas.model.domain.event.benefit;
 
-import static christmas.model.domain.event.benefit.gift.ChristmasGift.makeInitialConditionGift;
-import static christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount.makeInitialConditionTotalDiscount;
+import static christmas.model.domain.event.benefit.gift.ChristmasGift.makeNoneGift;
+import static christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount.makeZeroTotalDiscount;
 
 import christmas.model.domain.event.benefit.gift.Gift;
 import christmas.model.domain.event.benefit.totaldiscount.TotalDiscount;
@@ -17,8 +17,8 @@ public class EventBenefits {
         this.gift = gift;
     }
 
-    public static EventBenefits makeInitialConditionEventBenefits() {
-        return new EventBenefits(makeInitialConditionTotalDiscount(), makeInitialConditionGift());
+    public static EventBenefits makeZeroEventBenefits() {
+        return new EventBenefits(makeZeroTotalDiscount(), makeNoneGift());
     }
 
     public String makeBenefitMessage() {

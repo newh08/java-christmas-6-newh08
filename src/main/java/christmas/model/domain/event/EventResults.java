@@ -13,7 +13,7 @@ public class EventResults {
     }
 
     public static EventResults makeZeroEventResults() {
-        return new EventResults(EventBenefits.makeInitialConditionEventBenefits(), Badge.NONE);
+        return new EventResults(EventBenefits.makeZeroEventBenefits(), Badge.NONE);
     }
 
     public EventBenefits getEventBenefit() {

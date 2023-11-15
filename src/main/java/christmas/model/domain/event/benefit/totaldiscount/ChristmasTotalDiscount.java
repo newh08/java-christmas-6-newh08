@@ -14,7 +14,7 @@ public class ChristmasTotalDiscount implements TotalDiscount {
         discounts = ChristmasDiscountStrategies.getAllDiscountStrategy();
     }
 
-    public static ChristmasTotalDiscount makeInitialConditionTotalDiscount() {
+    public static ChristmasTotalDiscount makeZeroTotalDiscount() {
         return new ChristmasTotalDiscount();
     }
 
