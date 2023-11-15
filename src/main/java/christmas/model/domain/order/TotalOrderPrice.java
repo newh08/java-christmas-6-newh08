@@ -1,7 +1,6 @@
 package christmas.model.domain.order;
 
 import christmas.model.domain.event.strategy.EventStrategy;
-import christmas.model.domain.event.benefit.Gift;
 
 public class TotalOrderPrice {
 
@@ -13,10 +12,6 @@ public class TotalOrderPrice {
 
     public void updateTotalOrderPrice(RequestOrder requestOrder) {
         totalOrderPrice += requestOrder.getOrderPrice();
-    }
-
-    public Gift makeGiftPerTotalOrderPrice() {
-        return new Gift(totalOrderPrice);
     }
 
     public int getTotalOrderPrice() {

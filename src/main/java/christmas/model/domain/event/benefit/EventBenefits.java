@@ -1,8 +1,9 @@
 package christmas.model.domain.event.benefit;
 
-import static christmas.model.domain.event.benefit.Gift.makeInitialConditionGift;
+import static christmas.model.domain.event.benefit.gift.ChristmasGift.makeInitialConditionGift;
 import static christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount.makeInitialConditionTotalDiscount;
 
+import christmas.model.domain.event.benefit.gift.Gift;
 import christmas.model.domain.event.benefit.totaldiscount.TotalDiscount;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

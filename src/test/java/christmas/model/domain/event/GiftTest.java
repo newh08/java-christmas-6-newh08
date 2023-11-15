@@ -1,6 +1,7 @@
 package christmas.model.domain.event;
 
-import christmas.model.domain.event.benefit.Gift;
+import christmas.model.domain.event.benefit.gift.ChristmasGift;
+import christmas.model.domain.event.benefit.gift.Gift;
 import christmas.model.domain.order.TotalOrderPrice;
 import christmas.model.domain.order.RequestOrder;
 import org.assertj.core.api.Assertions;
@@ -16,7 +17,7 @@ class GiftTest {
         RequestOrder requestOrder = new RequestOrder("바비큐립", 3);
         totalOrderPrice.updateTotalOrderPrice(requestOrder);
 
-        Gift gift = totalOrderPrice.makeGiftPerTotalOrderPrice();
+        Gift gift = ChristmasGift.makeChristmasGift(totalOrderPrice);
         Assertions.assertThat(gift.getGiftBenefit()).isEqualTo(-25000);
     }
 
