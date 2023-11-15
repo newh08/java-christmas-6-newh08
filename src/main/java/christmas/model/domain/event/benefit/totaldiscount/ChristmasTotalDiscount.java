@@ -1,4 +1,4 @@
-package christmas.model.domain.event.benefit;
+package christmas.model.domain.event.benefit.totaldiscount;
 
 import christmas.model.domain.date.Date;
 import christmas.model.domain.event.discount.Discount;

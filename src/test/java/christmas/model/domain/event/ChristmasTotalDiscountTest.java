@@ -1,11 +1,11 @@
 package christmas.model.domain.event;
 
-import static christmas.model.domain.event.benefit.ChristmasTotalDiscount.makeInitialConditionTotalDiscount;
+import static christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount.makeInitialConditionTotalDiscount;
 import static christmas.model.domain.order.RequestOrdersTest.makeRequestOrdersWithTwoMainThreeDessertThreeAppetizer;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.domain.date.Date;
-import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
+import christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount;
 import christmas.model.domain.order.RequestOrders;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

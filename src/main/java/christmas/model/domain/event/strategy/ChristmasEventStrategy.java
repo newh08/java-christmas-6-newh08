@@ -5,8 +5,8 @@ import christmas.model.domain.event.benefit.Badge;
 import christmas.model.domain.event.benefit.EventBenefits;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.event.benefit.Gift;
-import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
-import christmas.model.domain.event.benefit.TotalDiscount;
+import christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount;
+import christmas.model.domain.event.benefit.totaldiscount.TotalDiscount;
 import christmas.model.domain.order.RequestOrders;
 import christmas.model.domain.order.TotalOrderPrice;
 

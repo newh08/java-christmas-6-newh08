@@ -5,7 +5,7 @@ import christmas.controller.ChristmasEventController;
 import christmas.model.domain.event.strategy.ChristmasEventStrategy;
 import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.strategy.EventStrategy;
-import christmas.model.domain.event.benefit.ChristmasTotalDiscount;
+import christmas.model.domain.event.benefit.totaldiscount.ChristmasTotalDiscount;
 import christmas.model.service.ChristmasEventService;
 import christmas.model.util.Converter;
 import christmas.view.InputView;
