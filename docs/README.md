@@ -42,27 +42,32 @@
 
 ### Event
 - ### Event Benefit 관련
-- #### Event Benefit 관련 필드변수 저장 - EventBenefits
+- ##### Event Benefit 관련 필드변수 저장 - EventBenefits
   - [x] 주문 정보 및 날짜에 따라 할인 정보 업데이트
   - [x] 주문 결과에 따라 증정 선물 업데이트
   - [x] 할인, 증정 혜택 메시지 합쳐 반환
   - [x] 총 혜택금액 계산해 반환
-- #### 증정 선물 정보 저장 - Gift
+- ##### 선물 정보를 추상화 하기 위한 인터페이스 - Gift
+- ##### 증정 선물 정보 저장 - ChristmasGift
   - [x] 총 주문 금액을 통해 증정선물 결정하기
   - [x] 금액에 따라 선물 여부 결정해 메시지 출력 기능 구현
   - [x] 선물 금액 반환하기
   - [x] 출력 메시지 생성해 반환하기
+- ##### 할인 관련 정보 저장 - DiscountBenefit
+  - [ ] 할인 관련 정보 저장 및 반환하기 
 - ##### 총 할인 내역을 추상화하기 위한 인터페이스 - TotalDiscount
 - ##### 총 할인 내역 저장 - ChristmasTotalDiscount
   - [x] 모든 크리스마스 이벤트 관련 할인 전략을 적용 하기
   - [x] 0원 이상의 모든 할인 전략 출력 메시지 만들기
+  - [ ] 할인 결과 만들어 반환하기
+- ### 할인 정책 관련
 - ##### 할인 금액 저장하기 - Discount (Abstract Class)
   - [x] 할인 금액 업데이트 하기
   - [x] 할인 금액 계산하기(추상 메서드)
-    - [x] 크리스마스 디데이 할인 - ChristmasDiscount
-    - [x] 특별 할인 - SpecialDiscount
-    - [x] 평일 할인 - WeekDiscount
-    - [x] 주말 할인 - WeekendDiscount
+    - [x] 크리스마스 디데이 할인 - ChristmasDDayDiscount
+    - [x] 특별 할인 - ChristmasSpecialDiscount
+    - [x] 평일 할인 - ChristmasWeekDiscount
+    - [x] 주말 할인 - ChristmasWeekendDiscount
   - [x] 각 Discount 에 출력 메시지 생성 기능 구현 - 모든 Discount
   - [x] 각 Discount 의 금액이 0원이 아닌지 확인하는 기능 구현
   - [x] 각 Discount 를 리셋하기
@@ -101,6 +106,7 @@
   - [x] 주문 메뉴의 DTO 를 주문 메뉴 객체로 변환하기
  
 ### Service - ChristmasEventService
+- ##### EventService 추상화 하기 위한 인터페이스 - EventService
 - [x] 날짜 입력값을 통해 날짜 Dto 생성하기 
 - [x] 요청 주문 Dto 를 통해 주문 정보 객체 생성하기
 - [x] 날짜와 주문한 메뉴들을 통해 이벤트 결과 DTO 생성하기
