@@ -1,8 +1,8 @@
 package christmas.controller;
 
 import christmas.model.domain.dto.EventResultsDto;
-import christmas.model.domain.dto.OrderedMenusDto;
 import christmas.model.domain.dto.DateDto;
+import christmas.model.domain.dto.RequestOrdersDto;
 import christmas.model.service.ChristmasEventService;
 import christmas.view.InputView;
 import christmas.view.OutputView;
@@ -23,14 +23,14 @@ public class ChristmasEventController {
     public void startEvent() {
         DateDto dateDto = repeat(this::makeDateDto);
 
-        OrderedMenusDto orderedMenusDto = repeat(this::makeOrderMenusDto);
+        RequestOrdersDto requestOrdersDto = repeat(this::makeRequestOrdersDto);
 
         outputView.printStartOfBenefitInfo(dateDto);
-        outputView.printOrder(orderedMenusDto);
-        outputView.printTotalOrderPrice(orderedMenusDto);
+        outputView.printOrder(requestOrdersDto);
+        outputView.printTotalOrderPrice(requestOrdersDto);
 
-        EventResultsDto eventResultsDto = christmasEventService.makeEventResultsDto(orderedMenusDto, dateDto);
-        outputView.printEventResult(eventResultsDto, orderedMenusDto);
+        EventResultsDto eventResultsDto = christmasEventService.makeEventResultsDto(requestOrdersDto, dateDto);
+        outputView.printEventResult(eventResultsDto, requestOrdersDto);
     }
 
     private DateDto makeDateDto() {
@@ -38,9 +38,9 @@ public class ChristmasEventController {
         return christmasEventService.makeDateDto(userInputDate);
     }
 
-    private OrderedMenusDto makeOrderMenusDto() {
+    private RequestOrdersDto makeRequestOrdersDto() {
         Map<String, Integer> userInputOrders = inputView.readOrders();
-        return christmasEventService.makeOrderedMenusDto(userInputOrders);
+        return christmasEventService.makeRequestOrdersDto(userInputOrders);
     }
 
     private <T> T repeat(Supplier<T> something) {

@@ -3,11 +3,10 @@ package christmas.model.service;
 import christmas.model.domain.date.Date;
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
-import christmas.model.domain.dto.OrderedMenusDto;
+import christmas.model.domain.dto.RequestOrdersDto;
 import christmas.model.domain.event.EventRepository;
 import christmas.model.domain.event.EventResults;
 import christmas.model.domain.event.strategy.EventStrategy;
-import christmas.model.domain.order.OrderedMenus;
 import christmas.model.domain.order.RequestOrder;
 import christmas.model.domain.order.RequestOrders;
 import christmas.model.util.Converter;
@@ -32,25 +31,24 @@ public class ChristmasEventService {
         return converter.from(userInputDate);
     }
 
-    public OrderedMenusDto makeOrderedMenusDto(Map<String, Integer> inputOrders) {
+    public RequestOrdersDto makeRequestOrdersDto(Map<String, Integer> inputOrders) {
         List<RequestOrder> convertedRequestOrders = inputOrders.entrySet().stream()
                                                         .map(converter::from)
                                                         .collect(Collectors.toList());
         RequestOrders requestOrders = new RequestOrders(convertedRequestOrders);
-        OrderedMenus orderedMenus = new OrderedMenus(requestOrders);
-        return converter.from(orderedMenus);
+        return converter.from(requestOrders);
     }
 
-    public EventResultsDto makeEventResultsDto(OrderedMenusDto orderedMenusDto, DateDto dateDto) {
-        EventResults eventResults = executeEvent(orderedMenusDto, dateDto, eventStrategy);
+    public EventResultsDto makeEventResultsDto(RequestOrdersDto requestOrdersDto, DateDto dateDto) {
+        EventResults eventResults = executeEvent(requestOrdersDto, dateDto, eventStrategy);
         runtimeUserId = eventRepository.save(eventResults);
         return converter.from(eventResults);
     }
 
-    private EventResults executeEvent(OrderedMenusDto orderedMenusDto, DateDto dateDto, EventStrategy eventStrategy) {
-        OrderedMenus orderedMenus = converter.from(orderedMenusDto);
+    private EventResults executeEvent(RequestOrdersDto requestOrdersDto, DateDto dateDto, EventStrategy eventStrategy) {
+        RequestOrders requestOrders = converter.from(requestOrdersDto);
         Date date = converter.from(dateDto);
-        return orderedMenus.applyEvent(eventStrategy, date);
+        return requestOrders.applyEvent(eventStrategy, date);
 
     }
 }

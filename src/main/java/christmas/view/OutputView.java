@@ -2,7 +2,7 @@ package christmas.view;
 
 import christmas.model.domain.dto.DateDto;
 import christmas.model.domain.dto.EventResultsDto;
-import christmas.model.domain.dto.OrderedMenusDto;
+import christmas.model.domain.dto.RequestOrdersDto;
 
 public class OutputView {
     private static final String RESULT_PRINT_OPENING_MESSAGE = "12월 %d일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n";
@@ -20,21 +20,21 @@ public class OutputView {
         System.out.printf(RESULT_PRINT_OPENING_MESSAGE, dateDto.getDate());
     }
 
-    public void printOrder(OrderedMenusDto orderedMenusDto) {
+    public void printOrder(RequestOrdersDto requestOrdersDto) {
         System.out.println(ORDERED_MENU);
-        System.out.println(orderedMenusDto.getOrdersMessage());
+        System.out.println(requestOrdersDto.getOrdersMessage());
     }
 
-    public void printTotalOrderPrice(OrderedMenusDto orderedMenusDto) {
+    public void printTotalOrderPrice(RequestOrdersDto requestOrdersDto) {
         System.out.println(TOTAL_PRICE_BEFORE_DISCOUNT);
-        System.out.printf(FORMAT_OF_PRICE, orderedMenusDto.getTotalOrderPrice());
+        System.out.printf(FORMAT_OF_PRICE, requestOrdersDto.getTotalOrderPrice());
     }
 
-    public void printEventResult(EventResultsDto eventResultsDto, OrderedMenusDto orderedMenusDto) {
+    public void printEventResult(EventResultsDto eventResultsDto, RequestOrdersDto requestOrdersDto) {
         printGift(eventResultsDto);
         printTotalBenefit(eventResultsDto);
         printTotalBenefitAmount(eventResultsDto);
-        printAfterDiscount(orderedMenusDto, eventResultsDto);
+        printAfterDiscount(requestOrdersDto, eventResultsDto);
         printBadge(eventResultsDto);
     }
 
@@ -59,9 +59,9 @@ public class OutputView {
         System.out.printf(FORMAT_OF_PRICE, eventResultsDto.getTotalBenefitAmount());
     }
 
-    private void printAfterDiscount(OrderedMenusDto orderedMenusDto, EventResultsDto eventResultsDto) {
+    private void printAfterDiscount(RequestOrdersDto requestOrdersDto, EventResultsDto eventResultsDto) {
         System.out.println(TOTAL_PRICE_AFTER_DISCOUNT);
-        int finalPrice = orderedMenusDto.getTotalOrderPrice() + eventResultsDto.getTotalDiscount();
+        int finalPrice = requestOrdersDto.getTotalOrderPrice() + eventResultsDto.getTotalDiscount();
         System.out.printf(FORMAT_OF_PRICE, finalPrice);
     }
 
