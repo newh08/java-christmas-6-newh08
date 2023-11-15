@@ -10,10 +10,10 @@ public class ChristmasGift implements Gift {
     private static final String CHRISTMAS_GIFT_FALSE_MESSAGE = "없음";
     private static final String CHRISTMAS_GIFT_BENEFIT_MESSAGE = "증정 이벤트: %,d원";
 
-    private final boolean gift;
+    private final boolean giftAvailability;
 
     private ChristmasGift(int totalPrice) {
-        this.gift = totalPrice >= MINIMUM_CHRISTMAS_GIFT_PRICE;
+        this.giftAvailability = totalPrice >= MINIMUM_CHRISTMAS_GIFT_PRICE;
     }
 
     public static Gift makeNoneGift() {
@@ -26,7 +26,7 @@ public class ChristmasGift implements Gift {
 
     @Override
     public int getGiftBenefit() {
-        if (gift) {
+        if (giftAvailability) {
             return CHRISTMAS_GIFT_PRICE;
         }
         return 0;
@@ -34,7 +34,7 @@ public class ChristmasGift implements Gift {
 
     @Override
     public String makeGiftMessage() {
-        if (gift) {
+        if (giftAvailability) {
             return CHRISTMAS_GIFT_TRUE_MESSAGE;
         }
         return CHRISTMAS_GIFT_FALSE_MESSAGE;
@@ -42,7 +42,7 @@ public class ChristmasGift implements Gift {
 
     @Override
     public Stream<String> makeGiftBenefitMessageStream() {
-        if (gift) {
+        if (giftAvailability) {
             return Stream.of(String.format(CHRISTMAS_GIFT_BENEFIT_MESSAGE, CHRISTMAS_GIFT_PRICE));
         }
         return Stream.empty();
